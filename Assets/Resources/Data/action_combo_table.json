@@ -1,0 +1,14 @@
+{
+  "actionCombos": [
+    {
+      "inputA": { "pilot": 1, "id": "03" },
+      "inputB": { "pilot": 2, "id": "04" },
+      "result": "Combo_01"
+    },
+    {
+      "inputA": { "pilot": 3, "id": "03" },
+      "inputB": { "pilot": 4, "id": "04" },
+      "result": "Combo_02"
+    }
+  ]
+}

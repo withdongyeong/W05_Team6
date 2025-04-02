@@ -1,0 +1,7 @@
+{
+  "enemyActions": [
+    { "enemyId": "enemy_1", "id": "E01", "type": "Defense", "counteredBy": [ { "pilot": 1, "id": "01" } ] },
+    { "enemyId": "enemy_1", "id": "E02", "type": "Defense", "counteredBy": [ { "pilot": 1, "id": "01" } ] },
+    { "enemyId": "enemy_1", "id": "E03", "type": "Defense", "counteredBy": [ { "pilot": 2, "id": "02" }, { "pilot": 4, "id": "04" } ] }
+  ]
+}
