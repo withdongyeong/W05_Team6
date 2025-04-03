@@ -15,7 +15,7 @@ public class MJ_ButtonManager : MonoBehaviour
     public bool isStarted { get; private set; }
 
     public bool mainMonitorActive { get; private set; }
-
+    
     private void Awake()
     {
         if (MJ_ButtonManager.instance == null)
