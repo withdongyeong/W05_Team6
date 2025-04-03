@@ -1,20 +1,12 @@
 {
   "pilotActions": [
-    { "pilot": 1, "id": "01", "type": "Attack", "energyCost": 10 },
-    { "pilot": 1, "id": "02", "type": "Defense", "energyCost": 10 },
-    { "pilot": 1, "id": "03", "type": "Attack", "energyCost": 10 },
-    { "pilot": 1, "id": "04", "type": "Defense", "energyCost": 10 },
-    { "pilot": 2, "id": "01", "type": "Attack", "energyCost": 10 },
-    { "pilot": 2, "id": "02", "type": "Defense", "energyCost": 10 },
-    { "pilot": 2, "id": "03", "type": "Attack", "energyCost": 10 },
-    { "pilot": 2, "id": "04", "type": "Defense", "energyCost": 10 },
-    { "pilot": 3, "id": "01", "type": "Attack", "energyCost": 10 },
-    { "pilot": 3, "id": "02", "type": "Defense", "energyCost": 10 },
-    { "pilot": 3, "id": "03", "type": "Attack", "energyCost": 10 },
-    { "pilot": 3, "id": "04", "type": "Defense", "energyCost": 10 },
-    { "pilot": 4, "id": "01", "type": "Attack", "energyCost": 10 },
-    { "pilot": 4, "id": "02", "type": "Defense", "energyCost": 10 },
-    { "pilot": 4, "id": "03", "type": "Attack", "energyCost": 10 },
-    { "pilot": 4, "id": "04", "type": "Defense", "energyCost": 10 }
+    { "pilot": 1, "id": "01", "type": "Attack", "energyCost": 3 },
+    { "pilot": 1, "id": "02", "type": "Defense", "energyCost": 1 },
+    { "pilot": 2, "id": "01", "type": "Attack", "energyCost": 3 },
+    { "pilot": 2, "id": "02", "type": "Defense", "energyCost": 1 },
+    { "pilot": 3, "id": "01", "type": "Attack", "energyCost": 3 },
+    { "pilot": 3, "id": "02", "type": "Defense", "energyCost": 2 },
+    { "pilot": 4, "id": "01", "type": "Attack", "energyCost": 3 },
+    { "pilot": 4, "id": "02", "type": "Defense", "energyCost": 2 }
   ]
 }
