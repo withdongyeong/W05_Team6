@@ -1,16 +1,20 @@
-
+ï»¿
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class MJ_ButtonManager : MonoBehaviour
 {
-    //½Ì±ÛÅæ
+    //ì‹±ê¸€í†¤
     public static MJ_ButtonManager instance { get; private set; }
-    //Á¶¸íÀº ¾ÆÁ÷ ÀÌ°Å ÇÏ³ª¸¸.
+    //ì¡°ëª…ì€ ì•„ì§ ì´ê±° í•˜ë‚˜ë§Œ.
     public Light2D globalLight { get; private set; }
-    //¸ğ´ÏÅÍ.
-    public GameObject mainMonitor { get; private set; }
+    //ëª¨ë‹ˆí„°.
+    public GameObject monitor { get; private set; }
+
+    public bool isStarted { get; private set; }
+
+    public bool mainMonitorActive { get; private set; }
 
     private void Awake()
     {
@@ -19,12 +23,12 @@ public class MJ_ButtonManager : MonoBehaviour
         else
             Destroy(gameObject);
         globalLight = GameObject.Find("Global Light 2D").GetComponent<Light2D>();
-        mainMonitor = GameObject.Find("Square");
+        monitor = GameObject.Find("Square");
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartRobot();
+    
     }
 
     // Update is called once per frame
@@ -33,22 +37,58 @@ public class MJ_ButtonManager : MonoBehaviour
         
     }
 
-    //·Îº¿¿¡ ½Ãµ¿À» °Å´Â ÇÔ¼ö.
+    //ë¡œë´‡ì— ì‹œë™ì„ ê±°ëŠ” í•¨ìˆ˜.
     public void StartRobot()
     {
-        StartCoroutine(StartRobotCoroutine());
+        if(!isStarted)
+            StartCoroutine(StartRobotCo());
     }
 
-    IEnumerator StartRobotCoroutine()
+    IEnumerator StartRobotCo()
     {
+        isStarted = true;
         float currentTime = 0;
         while(currentTime < 1f)
         {
             globalLight.intensity = Mathf.Lerp(0, 1, currentTime);
-            mainMonitor.transform.position = new Vector2(0, Mathf.Lerp(-1, 0, currentTime));
             currentTime+= Time.deltaTime / 3f;
             yield return null;
         }
         Debug.Log("STAND BY");
+    }
+
+    //ë©”ì¸ ëª¨ë‹ˆí„° ì˜¬ë¦¬ëŠ” í•¨ìˆ˜
+    public void ActivateMainMonitor()
+    {
+        if (isStarted && !mainMonitorActive)
+            StartCoroutine(ActivateMainMonitorCo());
+        else if (isStarted && mainMonitorActive)
+            StartCoroutine(DeactivateMainMonitorCo());
+
+    }
+
+    IEnumerator ActivateMainMonitorCo()
+    {  
+        float currentTime = 0;
+        while (currentTime < 1f)
+        {
+            monitor.transform.position = new Vector2(0.004f, Mathf.Lerp(-2.685f, 4.7f, currentTime));
+            currentTime += Time.deltaTime *5f;
+            yield return null;
+        }
+        mainMonitorActive = true;
+        Debug.Log("MainMonitorActive");
+    }
+    IEnumerator DeactivateMainMonitorCo()
+    {
+        float currentTime = 0;
+        while (currentTime < 1f)
+        {
+            monitor.transform.position = new Vector2(0.004f, Mathf.Lerp(4.7f, -2.685f, currentTime));
+            currentTime += Time.deltaTime * 5f;
+            yield return null;
+        }
+        mainMonitorActive = false;
+        Debug.Log("MainMonitorDeactive");
     }
 }
