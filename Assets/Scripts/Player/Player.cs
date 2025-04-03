@@ -9,9 +9,11 @@ public class Player : MonoBehaviour
     private List<Pilot> _pilots = new();
     private float _currentHp;
     private float _hpMax;
+    private Tester _tester;
     
     void Start()
     {
+        _tester = FindAnyObjectByType<Tester>();
         _currentEnergy = GlobalSettings.Instance.PlayerEnergyMax;
         _hpMax = GlobalSettings.Instance.PlayerHpMax;
         _currentHp = _hpMax;
@@ -69,11 +71,11 @@ public class Player : MonoBehaviour
     public bool TakeDamage(float amount)
     {
         _currentHp -= amount;
-        Debug.Log($"Player took {amount} damage. Current HP: {_currentHp}");
+        if (_tester) _tester.UpdateResultText($"Player took {amount} damage. Current HP: {_currentHp}");
 
         if (_currentHp <= 0)
         {
-            Debug.Log("PLAYER DEFEATED");
+            if (_tester) _tester.UpdateResultText("PLAYER DEFEATED");
             return false;
         }
 

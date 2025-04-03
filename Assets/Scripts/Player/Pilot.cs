@@ -5,12 +5,14 @@ public class Pilot : MonoBehaviour
 {
     public int pilotId;
 
-    private bool isPreparing = false;
-    private bool isCancelled = false;
+    private bool _isPreparing = false;
+    private bool _isCancelled = false;
     private Player _player;
-    private Coroutine prepareRoutine;
+    private Coroutine _prepareRoutine;
 
-    public bool CanAcceptCommand() => !isPreparing;
+    public bool CanAcceptCommand() => !_isPreparing;
+    public bool IsPreparing => _isPreparing;
+
 
     void Awake()
     {
@@ -19,12 +21,12 @@ public class Pilot : MonoBehaviour
     
     public void PrepareAction(PilotActionData actionData)
     {
-        if (isPreparing) return;
+        if (_isPreparing) return;
 
-        isPreparing = true;
-        isCancelled = false;
+        _isPreparing = true;
+        _isCancelled = false;
         
-        prepareRoutine = StartCoroutine(PrepareAndExecute(actionData));
+        _prepareRoutine = StartCoroutine(PrepareAndExecute(actionData));
     }
 
     IEnumerator PrepareAndExecute(PilotActionData actionData)
@@ -34,26 +36,26 @@ public class Pilot : MonoBehaviour
         
         yield return new WaitForSeconds(GlobalSettings.Instance.PlayerPrepareTime);
 
-        if (!isCancelled && _player.IsAlive()) // 안정성 확보
+        if (!_isCancelled && _player.IsAlive()) // 안정성 확보
         {
             GameManager.Instance.ReceivePlayerAction(pilotId, actionData);
         }
 
-        isPreparing = false;
-        prepareRoutine = null;
+        _isPreparing = false;
+        _prepareRoutine = null;
     }
 
 
 
     public bool CancelAction()
     {
-        if (!isPreparing || prepareRoutine == null) return false;
+        if (!_isPreparing || _prepareRoutine == null) return false;
 
-        isCancelled = true;
+        _isCancelled = true;
 
-        StopCoroutine(prepareRoutine);
-        prepareRoutine = null;
-        isPreparing = false;
+        StopCoroutine(_prepareRoutine);
+        _prepareRoutine = null;
+        _isPreparing = false;
 
         Debug.Log($"Pilot {pilotId} action cancelled.");
         return true;
