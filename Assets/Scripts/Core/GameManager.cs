@@ -1,18 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
     private ActionComboDataList _comboData;
-    private bool _isPlayerAttacking;
-    private bool _isPlayerDefending;
-    private bool _isEnemyAttacking;
-    private bool _isEnemyDefending;
-    private EnemyActionData _currentEnemyAction;
     private Enemy _enemy;
     private Player _player;
     private Tester _tester;
@@ -24,13 +18,23 @@ public class GameManager : MonoBehaviour
         public float timestamp;
     }
 
+    public class PendingAction
+    {
+        public int pilot;
+        public PilotActionData action;
+        public float occurTime;
+        public float endTime;
+    }
+
     private List<TimedAction> _actionQueue = new();
     private HashSet<int> _activePilotIds = new();
 
-    void Awake()
-    {
-        Instance = this;
-    }
+    private PendingAction _playerAction;
+    private EnemyActionData _enemyAction;
+    private float _enemyOccurTime;
+    private float _enemyEndTime;
+
+    void Awake() => Instance = this;
 
     void Start()
     {
@@ -43,11 +47,7 @@ public class GameManager : MonoBehaviour
 
     public void ReceivePlayerAction(int pilotId, PilotActionData action)
     {
-        if (_activePilotIds.Contains(pilotId))
-        {
-            Debug.LogWarning($"Pilot {pilotId} action already active. Ignoring duplicate execution.");
-            return;
-        }
+        if (_activePilotIds.Contains(pilotId)) return;
 
         _activePilotIds.Add(pilotId);
         _actionQueue.Add(new TimedAction
@@ -56,6 +56,10 @@ public class GameManager : MonoBehaviour
             action = action,
             timestamp = Time.time
         });
+    }
+    public PendingAction GetCurrentPlayerAction()
+    {
+        return _playerAction;
     }
 
     IEnumerator ComboProcessingLoop()
@@ -66,161 +70,182 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
+    
+    void Update()
+    {
+        if (_tester != null)
+        {
+            string status = "";
+
+            float now = Time.time;
+
+            bool isPlayerDefending = _playerAction != null &&
+                                     _playerAction.action.type == "Defense" &&
+                                     now <= _playerAction.endTime;
+
+            bool isEnemyDefending = _enemyAction != null &&
+                                    _enemyAction.type == "Defense" &&
+                                    now <= _enemyEndTime;
+
+            if (isPlayerDefending) status += "플레이어 방어 중\n";
+            if (isEnemyDefending) status += "적 방어 중\n";
+            if (status == "") status = "방어 중인 캐릭터 없음";
+
+            _tester.UpdateStatusText(status);
+        }
+    }
+
 
     void TryProcessActionQueue()
     {
-        int i = 0;
+        float now = Time.time;
 
-        while (i < _actionQueue.Count)
-        {
-            var current = _actionQueue[i];
+        // 윈도우 내에 있는 액션만 추림
+        var windowedActions = _actionQueue.FindAll(a => now - a.timestamp <= GlobalSettings.Instance.ComboCheckDuration);
 
-            bool matched = false;
-            for (int j = i + 1; j < _actionQueue.Count; j++)
-            {
-                var next = _actionQueue[j];
-                if (next.timestamp - current.timestamp <= GlobalSettings.Instance.ComboCheckDuration)
-                {
-                    var combo = CheckComboAction(current.pilot, current.action.id, next.pilot, next.action.id);
-                    if (combo != null)
-                    {
-                        ExecutePlayerAction(combo);
-                        _activePilotIds.Remove(current.pilot);
-                        _activePilotIds.Remove(next.pilot);
-                        _actionQueue.RemoveAt(j);
-                        _actionQueue.RemoveAt(i);
-                        matched = true;
-                        break; // 다시 처음부터
-                    }
-                }
-            }
-
-            if (!matched)
-            {
-                if (Time.time - current.timestamp > GlobalSettings.Instance.ComboCheckDuration)
-                {
-                    ExecutePlayerAction(current.action);
-                    _activePilotIds.Remove(current.pilot);
-                    _actionQueue.RemoveAt(i);
-                    continue; // 그대로 다음
-                }
-                i++; // 다음 항목으로
-            }
-        }
-    }
-
-
-    PilotActionData CheckComboAction(int pilotA, string idA, int pilotB, string idB)
-    {
         foreach (var combo in _comboData.actionCombos)
         {
-            bool match =
-                (combo.inputA.pilot == pilotA && combo.inputA.id == idA &&
-                 combo.inputB.pilot == pilotB && combo.inputB.id == idB)
-                ||
-                (combo.inputB.pilot == pilotA && combo.inputB.id == idA &&
-                 combo.inputA.pilot == pilotB && combo.inputA.id == idB);
-
-            if (match)
+            var match = TryMatchCombo(windowedActions, combo);
+            if (match != null)
             {
-                return new PilotActionData { pilot = 5, id = combo.result, type = "Combo" };
+                ReceiveResolvedPlayerAction(new PendingAction
+                {
+                    pilot = 5,
+                    action = new PilotActionData { pilot = 5, id = combo.result, type = "Combo" }
+                });
+
+                foreach (var used in match)
+                {
+                    _activePilotIds.Remove(used.pilot);
+                    _actionQueue.Remove(used);
+                }
+                return;
             }
         }
-        return null;
-    }
 
-    void ExecutePlayerAction(PilotActionData action)
-    {
-        if (_tester) _tester.UpdatePlayerText($"Player Action Executed: Pilot{action.pilot}_{action.id} [{action.type}]");
-        StartCoroutine(HandlePlayerAction(action));
-    }
-
-    IEnumerator HandlePlayerAction(PilotActionData action)
-    {
-        if (action.type == "Attack" || action.type == "Combo") _isPlayerAttacking = true;
-        if (action.type == "Defense") _isPlayerDefending = true;
-
-        yield return new WaitForSeconds(GlobalSettings.Instance.AttackCheckDuration);
-
-        // TODO 플레이어 공격 및 방어 애니메이션 재생
-        
-        if (action.type == "Attack" || action.type == "Combo")
+        // 콤보 불가능한 액션은 단일 실행
+        for (int i = 0; i < _actionQueue.Count;)
         {
-            bool enemyBlocked = _isEnemyDefending &&
-                                _currentEnemyAction != null &&
-                                _currentEnemyAction.counteredBy.Exists(c => c.pilot == action.pilot && c.id == action.id);
+            var current = _actionQueue[i];
+            if (now - current.timestamp > GlobalSettings.Instance.ComboCheckDuration)
+            {
+                ReceiveResolvedPlayerAction(new PendingAction
+                {
+                    pilot = current.pilot,
+                    action = current.action
+                });
+
+                _activePilotIds.Remove(current.pilot);
+                _actionQueue.RemoveAt(i);
+            }
+            else
+            {
+                i++;
+            }
+        }
+    }
+
+
+    List<TimedAction> TryMatchCombo(List<TimedAction> availableActions, ComboData combo)
+    {
+        var matched = new List<TimedAction>();
+
+        foreach (var input in combo.inputs)
+        {
+            var found = availableActions.Find(a => a.pilot == input.pilot && a.action.id == input.id && !matched.Contains(a));
+            if (found != null)
+            {
+                matched.Add(found);
+            }
+            else
+            {
+                return null; // 하나라도 안 맞으면 불일치
+            }
+        }
+
+        return matched;
+    }
+
+
+    void ReceiveResolvedPlayerAction(PendingAction resolved)
+    {
+        resolved.occurTime = Time.time;
+        resolved.endTime = resolved.action.type == "Defense"
+            ? Time.time + GlobalSettings.Instance.DefenseBufferTime
+            : Time.time;
+
+        _playerAction = resolved;
+
+        if (_tester)
+            _tester.UpdatePlayerText($"Player Action Executed: Pilot{resolved.pilot}_{resolved.action.id} [{resolved.action.type}]");
+
+        ResolvePlayerAction(resolved);
+    }
+
+    public void ReceiveEnemyAction(EnemyActionData action)
+    {
+        _enemyAction = action;
+        _enemyOccurTime = Time.time;
+        _enemyEndTime = action.type == "Defense"
+            ? Time.time + GlobalSettings.Instance.DefenseBufferTime
+            : Time.time;
+
+        if (_tester)
+            _tester.UpdateEnemyText($"Enemy Action Executed: {action.id}");
+
+        ResolveEnemyAction(action);
+    }
+
+    void ResolvePlayerAction(PendingAction action)
+    {
+        if (action.action.type == "Attack" || action.action.type == "Combo")
+        {
+            bool enemyBlocked = _enemyAction != null &&
+                                _enemyAction.type == "Defense" &&
+                                _enemyOccurTime <= action.occurTime &&
+                                action.occurTime <= _enemyEndTime;
 
             if (enemyBlocked)
             {
-                Debug.Log("Enemy blocked the attack.");
+                _tester.UpdateResultText($"[Player] Pilot{action.pilot}_{action.action.id} 공격 → [Enemy] 방어 성공");
             }
             else
             {
-                Debug.Log("Enemy took damage!");
-                if (!_enemy.TakeDamage(GlobalSettings.Instance.PlayerDamage))
-                {
-                    // TODO 플레이어 승리
-                    Debug.Log("Enemy defeated.");
-                }
+                bool isAlive = _enemy.TakeDamage(GlobalSettings.Instance.PlayerDamage);
+                _tester.UpdateResultText($"[Player] Pilot{action.pilot}_{action.action.id} 공격 → [Enemy] 피해 {(isAlive ? "입음" : "사망")}");
             }
         }
 
-        if (action.type == "Defense" && _isEnemyAttacking)
+        if (action.action.type == "Defense" &&
+            _enemyAction != null &&
+            _enemyAction.type == "Attack" &&
+            action.occurTime <= _enemyOccurTime &&
+            _enemyOccurTime <= action.endTime)
         {
-            Debug.Log("Player blocked the attack.");
+            _tester.UpdateResultText($"[Enemy] { _enemyAction.id } 공격 → [Player] 방어 성공");
         }
-
-        yield return new WaitForSeconds(GlobalSettings.Instance.DefenseBufferTime);
-
-        if (action.type == "Attack" || action.type == "Combo") _isPlayerAttacking = false;
-        if (action.type == "Defense") _isPlayerDefending = false;
     }
 
-    public void ReceiveEnemyAction(EnemyActionData enemyAction)
+
+    void ResolveEnemyAction(EnemyActionData action)
     {
-        _currentEnemyAction = enemyAction;
-        StartCoroutine(EnemyActionResolution(enemyAction));
-    }
-
-    IEnumerator EnemyActionResolution(EnemyActionData enemyAction)
-    {
-        _isEnemyAttacking = enemyAction.type == "Attack";
-        _isEnemyDefending = enemyAction.type == "Defense";
-
-        yield return new WaitForSeconds(GlobalSettings.Instance.AttackCheckDuration);
-        
-        if (_tester) _tester.UpdateEnemyText($"Enemy Action Executed: {enemyAction.id}");
-
-        if (enemyAction.type == "Attack")
+        if (action.type == "Attack")
         {
-            if (!_isPlayerDefending)
+            bool playerBlocked = _playerAction != null &&
+                                 _playerAction.action.type == "Defense" &&
+                                 _playerAction.occurTime <= _enemyOccurTime &&
+                                 _enemyOccurTime <= _playerAction.endTime;
+
+            if (playerBlocked)
             {
-                if (!_player.TakeDamage(GlobalSettings.Instance.EnemyAttackDamage))
-                {
-                    Debug.Log("Player defeated.");
-                    // TODO: 게임 패배 처리
-                }
+                _tester.UpdateResultText($"[Enemy] {action.id} 공격 → [Player] 방어 성공");
             }
             else
             {
-                if (_tester) _tester.UpdatePlayerText("Enemy attack was blocked.");
+                bool isAlive = _player.TakeDamage(GlobalSettings.Instance.EnemyAttackDamage);
+                _tester.UpdateResultText($"[Enemy] {action.id} 공격 → [Player] 피해 {(isAlive ? "입음" : "사망")}");
             }
         }
-
-        if (enemyAction.type == "Defense" && _isPlayerAttacking)
-        {
-            if (_tester) _tester.UpdatePlayerText("Enemy blocked the attack.");
-        }
-
-        yield return new WaitForSeconds(GlobalSettings.Instance.DefenseBufferTime);
-
-        _isEnemyAttacking = false;
-        _isEnemyDefending = false;
     }
-    
-    // Getter
-    public bool IsPlayerAttacking => _isPlayerAttacking;
-    public bool IsPlayerDefending => _isPlayerDefending;
-    public bool IsEnemyAttacking => _isEnemyAttacking;
-    public bool IsEnemyDefending => _isEnemyDefending;
+
 }

@@ -8,15 +8,14 @@ public class ComboInput
 }
 
 [System.Serializable]
-public class ActionCombo
+public class ComboData
 {
-    public ComboInput inputA;
-    public ComboInput inputB;
-    public string result; // 결과 행동명 (예: "PowerSmash")
+    public List<ComboInput> inputs;  // 콤보 입력들을 리스트로
+    public string result;            // 결과 행동 ID
 }
 
 [System.Serializable]
 public class ActionComboDataList
 {
-    public List<ActionCombo> actionCombos;
+    public List<ComboData> actionCombos;
 }
