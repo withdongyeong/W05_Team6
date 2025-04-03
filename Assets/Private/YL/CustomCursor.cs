@@ -1,6 +1,6 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
-//Ä¿¼­ ÀÌ¹ÌÁö º¯°æ ¹× Ä¿¼­ ÅØ½ºÃ³ ÀÌ¹ÌÁö¿¡¼­ Å¬¸¯ À§Ä¡ Á¶Àı
+//ì»¤ì„œ ì´ë¯¸ì§€ ë³€ê²½ ë° ì»¤ì„œ í…ìŠ¤ì²˜ ì´ë¯¸ì§€ì—ì„œ í´ë¦­ ìœ„ì¹˜ ì¡°ì ˆ
 public class CustomCursor : MonoBehaviour
 {
     public Texture2D Customcursor;
