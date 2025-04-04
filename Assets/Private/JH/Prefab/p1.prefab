@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1262524035
+  m_SortingLayerID: 1335041529
   m_SortingLayer: -1
   m_SortingOrder: 20
   m_Sprite: {fileID: 3195213906089839111, guid: 4b56cd02f27b18842b80b626e452a132, type: 3}
@@ -164,7 +164,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -544607369
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 649223268058989734, guid: 8c9082ed46c72834aa1ea62434f17038, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
@@ -309,7 +309,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1262524035
+  m_SortingLayerID: 1335041529
   m_SortingLayer: -1
   m_SortingOrder: 10
   m_Sprite: {fileID: -3981238153432955336, guid: 49e9630966f74794d90b6087db40ea57, type: 3}
@@ -402,7 +402,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -544607369
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 11
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &6181717109780643760
@@ -576,7 +576,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -544607369
+  m_SortingLayerID: -217438235
   m_SortingLayer: 1
   m_SortingOrder: -10
   m_Sprite: {fileID: 649223268058989734, guid: 8c9082ed46c72834aa1ea62434f17038, type: 3}
@@ -775,7 +775,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -544607369
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 11
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5544263042855931290
@@ -949,7 +949,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -544607369
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 649223268058989734, guid: 8c9082ed46c72834aa1ea62434f17038, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
