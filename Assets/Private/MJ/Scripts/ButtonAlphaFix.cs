@@ -28,7 +28,7 @@ public class ButtonAlphaFix : MonoBehaviour , IPointerEnterHandler, IPointerExit
     // Update is called once per frame
     void Update()
     {
-        if (!isHovering)
+        if (isHovering)
         {
             float t = (Mathf.Sin(Time.time * 4f) + 0.6f) / 2.5f;
             image.color = new Color(glowColor.r, glowColor.g, glowColor.b, t);
@@ -37,11 +37,11 @@ public class ButtonAlphaFix : MonoBehaviour , IPointerEnterHandler, IPointerExit
     public void OnPointerEnter(PointerEventData eventData)
     {
         isHovering = true;
-        image.color = new Color(glowColor.r, glowColor.g, glowColor.b, 1f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         isHovering = false;
+        image.color = new Color(glowColor.r, glowColor.g, glowColor.b, 1f);
     }
 }
