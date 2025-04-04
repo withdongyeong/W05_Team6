@@ -1,14 +1,19 @@
 {
   "actionCombos": [
     {
-      "inputA": { "pilot": 1, "id": "03" },
-      "inputB": { "pilot": 2, "id": "04" },
-      "result": "Combo_01"
+      "inputs": [
+        { "pilot": 1, "id": "01" },
+        { "pilot": 2, "id": "02" }
+      ],
+      "result": "smallCombo"
     },
     {
-      "inputA": { "pilot": 3, "id": "03" },
-      "inputB": { "pilot": 4, "id": "04" },
-      "result": "Combo_02"
+      "inputs": [
+        { "pilot": 2, "id": "02" },
+        { "pilot": 3, "id": "03" },
+        { "pilot": 4, "id": "04" }
+      ],
+      "result": "SuperCombo"
     }
   ]
 }
