@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 112966d904c64fb4c9b16470d2187f5d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6577973109880897251
+    second: newnewFilledEnergyGauge_0
+  - first:
+      213: 6444493692778426585
+    second: newnewFilledEnergyGauge_1
+  - first:
+      213: 4446605566251486048
+    second: newnewFilledEnergyGauge_2
+  - first:
+      213: 7159316963592898933
+    second: newnewFilledEnergyGauge_3
+  - first:
+      213: -8276086942934653539
+    second: newnewFilledEnergyGauge_4
+  - first:
+      213: -8922140439272434735
+    second: newnewFilledEnergyGauge_5
+  - first:
+      213: -5423957129266891744
+    second: newnewFilledEnergyGauge_6
+  - first:
+      213: -7167424087815387206
+    second: newnewFilledEnergyGauge_7
+  - first:
+      213: 5776810168812225826
+    second: newnewFilledEnergyGauge_8
+  - first:
+      213: -2432012685804909891
+    second: newnewFilledEnergyGauge_9
+  - first:
+      213: 3459983915210964739
+    second: newnewFilledEnergyGauge_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_0
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 717
+        width: 47
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d114a73ee4856b4a0800000000000000
+      internalID: -6577973109880897251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 468
+        width: 68
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0bd438ed07f6950800000000000000
+      internalID: 6444493692778426585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_2
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 500
+        width: 66
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06bc1b0143485bd30800000000000000
+      internalID: 4446605566251486048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_3
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 500
+        width: 69
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5790261c8d00b5360800000000000000
+      internalID: 7159316963592898933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_4
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 502
+        width: 68
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95a12426ce652d80800000000000000
+      internalID: -8276086942934653539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_5
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 499
+        width: 70
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3d401ca803e2480800000000000000
+      internalID: -8922140439272434735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_6
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 498
+        width: 70
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02479117abb3ab4b0800000000000000
+      internalID: -5423957129266891744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_7
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 498
+        width: 69
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab78f2b44c1388c90800000000000000
+      internalID: -7167424087815387206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_8
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 498
+        width: 70
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225caeedd3a5b2050800000000000000
+      internalID: 5776810168812225826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_9
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 498
+        width: 69
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbaca5df851cf3ed0800000000000000
+      internalID: -2432012685804909891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newnewFilledEnergyGauge_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 276
+        width: 141
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ff6b20a05540030800000000000000
+      internalID: 3459983915210964739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      newnewFilledEnergyGauge_0: -6577973109880897251
+      newnewFilledEnergyGauge_1: 6444493692778426585
+      newnewFilledEnergyGauge_10: 3459983915210964739
+      newnewFilledEnergyGauge_2: 4446605566251486048
+      newnewFilledEnergyGauge_3: 7159316963592898933
+      newnewFilledEnergyGauge_4: -8276086942934653539
+      newnewFilledEnergyGauge_5: -8922140439272434735
+      newnewFilledEnergyGauge_6: -5423957129266891744
+      newnewFilledEnergyGauge_7: -7167424087815387206
+      newnewFilledEnergyGauge_8: 5776810168812225826
+      newnewFilledEnergyGauge_9: -2432012685804909891
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
