@@ -21,7 +21,6 @@ public class Tester : MonoBehaviour
     private float _lastLogTime = 0f;
     private string _logBuffer = "";
     
-
     void Awake()
     {
         _player = FindAnyObjectByType<Player>();
@@ -114,7 +113,7 @@ public class Tester : MonoBehaviour
     }
 
 
-    void TriggerAction(string actionId)
+    public void TriggerAction(string actionId)
     {
         int pilotIndex = selectedPilot.Value - 1;
         if (pilotIndex < 0 || pilotIndex >= _player.transform.childCount) return;
@@ -142,5 +141,12 @@ public class Tester : MonoBehaviour
 
         var pilot = _player.transform.GetChild(index).GetComponent<Pilot>();
         _player.CancelCommand(pilot);
+    }
+    
+    public PilotActionDataList PilotActions => _pilotActions;
+
+    public void ChangeSelectedPilot(int index)
+    {
+        selectedPilot = index;
     }
 }

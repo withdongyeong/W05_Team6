@@ -8,6 +8,7 @@ public class ButtonAlphaFix : MonoBehaviour , IPointerEnterHandler, IPointerExit
     Image image;   
     private Color glowColor;
     private bool isHovering = false;
+    float currentTime = 0;
     
     private void Awake()
     {
@@ -30,7 +31,8 @@ public class ButtonAlphaFix : MonoBehaviour , IPointerEnterHandler, IPointerExit
     {
         if (isHovering)
         {
-            float t = (Mathf.Sin(Time.time * 4f) + 0.6f) / 2.5f;
+            currentTime += Time.deltaTime * 4f;
+            float t = (Mathf.Sin(currentTime) + 0.6f) / 2.5f;
             image.color = new Color(glowColor.r, glowColor.g, glowColor.b, t);
         }
     }
@@ -43,5 +45,6 @@ public class ButtonAlphaFix : MonoBehaviour , IPointerEnterHandler, IPointerExit
     {
         isHovering = false;
         image.color = new Color(glowColor.r, glowColor.g, glowColor.b, 1f);
+        currentTime = 0;
     }
 }
