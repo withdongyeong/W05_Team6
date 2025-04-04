@@ -1,8 +1,10 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public TextMeshPro _energyUIText;
     public static UIManager Instance;
     public Action OnResetUI;
     public Action OnDisableUI;
@@ -17,5 +19,10 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void UpdateEnergyUI(int currentEnergy)
+    {
+        _energyUIText.text = currentEnergy.ToString() + " / " + GlobalSettings.Instance.PlayerEnergyMax.ToString();
     }
 }

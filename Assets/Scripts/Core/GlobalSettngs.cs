@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GlobalSettings : MonoBehaviour
 {
@@ -9,8 +9,8 @@ public class GlobalSettings : MonoBehaviour
     private float _comboCheckDuration = 1f;
     private float _attackCheckDuration = 1f;
     private float _playerHpMax = 100f;
-    private float _playerEnergyMax = 100f;
-    private float _playerEnergyRecoveryPerSec = 10f;
+    private float _playerEnergyMax = 10f;
+    private float _playerEnergyRecoveryPerSec = 1f;
     private float _actionCancelRefundAmount = 5f;
     private float _playerDamage = 10f;
     private float _defenseBufferTime = 2f;
