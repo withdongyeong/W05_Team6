@@ -38,11 +38,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: OutsideRobot
+    uniqueID: 2817279005
+    locked: 0
+  - name: InsideRobot
+    uniqueID: 3032443261
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: UI
-    uniqueID: 4077529061
+    uniqueID: 3750359927
     locked: 0
   m_RenderingLayers:
   - Default
