@@ -1,27 +1,59 @@
-﻿using Unity.VisualScripting;
+﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PilotButton : MonoBehaviour
-{
-    public string actionId;
-    
+{ 
     private Player _player;
     private Pilot _pilot;
-    private PilotActionDataList _pilotActions;
+    private PilotActionButton[] _pilotActionButtons;
+    private Collider2D _collider;
 
 
     private void Awake()
     {
         _player = GetComponentInParent<Player>();
         _pilot = GetComponentInParent<Pilot>();
-        _pilotActions = DataLoader.LoadPilotActions();
+        _pilotActionButtons = GetComponentsInChildren<PilotActionButton>(includeInactive:true);
+        _collider = GetComponent<Collider2D>();
     }
 
-    void OnMouseDown()
+    private void OnEnable()
     {
-        Debug.Log("Button Clicked");
-        var matchedAction = _pilotActions.pilotActions.Find(a =>
-        a.pilot == _pilot.pilotId && a.id == actionId);
-        _player.IssueCommand(_pilot, matchedAction);
+        UIManager.Instance.OnResetUI += Close;
+        for (int i = 0; i < _pilotActionButtons.Length; i++)
+        {
+            _pilotActionButtons[i].gameObject.SetActive(false);
+        }
+    }
+
+    private void OnDisable()
+    {
+        UIManager.Instance.OnResetUI -= Close;
+    }
+
+    private void OnMouseDown()
+    {
+        Open();
+    }
+
+    private void Open()
+    {
+        //UIManager.Instance.OBackGroundDark(
+        UIManager.Instance.SetBackGround(true);
+        for (int i = 0; i < _pilotActionButtons.Length; i++)
+        {
+            _pilotActionButtons[i].gameObject.SetActive(true);
+        }
+        //gameObject.SetActive(false);
+    }
+
+    private void Close()
+    {
+        UIManager.Instance.SetBackGround(false);
+        for (int i = 0; i < _pilotActionButtons.Length; i++)
+        {
+            _pilotActionButtons[i].gameObject.SetActive(false);
+        }
     }
 }
