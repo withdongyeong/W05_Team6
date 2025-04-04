@@ -3,21 +3,28 @@
 public class UI_Background : MonoBehaviour
 {
 
-    private void OnEnable()
+    private void Start()
     {
-        UIManager.Instance.OnResetUI += SetActiveFalse;
+        UIManager.Instance.OnResetUI += InactiveSelf;
+        UIManager.Instance.OnDisableUI += ActiveSelf;
+        InactiveSelf();
     }
     
-    private void OnDisable()
+    private void OnDestroy()
     {
-        UIManager.Instance.OnResetUI -= SetActiveFalse;
+        UIManager.Instance.OnResetUI -= InactiveSelf;
+        UIManager.Instance.OnDisableUI -= ActiveSelf;
     }
     private void OnMouseDown()
     {
-        UIManager.Instance.ResetUI();
+        UIManager.Instance.OnResetUI?.Invoke();
     }
 
-    public void SetActiveFalse()
+    public void ActiveSelf()
+    {
+        gameObject.SetActive(true);
+    }
+    public void InactiveSelf()
     {
         gameObject.SetActive(false);
     }

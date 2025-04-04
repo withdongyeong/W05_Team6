@@ -10,17 +10,13 @@ public class PilotActionButton : MonoBehaviour
     private PilotActionDataList _pilotActions;
 
 
-    private void Awake()
+    private void Start()
     {
         _player = GetComponentInParent<Player>();
         _pilot = GetComponentInParent<Pilot>();
         _pilotActions = DataLoader.LoadPilotActions();
     }
 
-    private void OnEnable()
-    {
-        UIManager.Instance.OnResetUI += InactiveSelf;
-    }
 
     private void OnMouseDown()
     {
@@ -29,13 +25,6 @@ public class PilotActionButton : MonoBehaviour
         a.pilot == _pilot.pilotId && a.id == actionId);
         _player.IssueCommand(_pilot, matchedAction);
 
-        UIManager.Instance.ResetUI();
+        UIManager.Instance.OnResetUI?.Invoke();
     }
-
-    private void InactiveSelf()
-    {
-        gameObject.SetActive(false);
-    }
-
-
 }

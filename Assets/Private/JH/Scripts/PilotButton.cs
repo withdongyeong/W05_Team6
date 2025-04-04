@@ -10,26 +10,21 @@ public class PilotButton : MonoBehaviour
     private Collider2D _collider;
 
 
-    private void Awake()
+    private void Start()
     {
         _player = GetComponentInParent<Player>();
         _pilot = GetComponentInParent<Pilot>();
         _pilotActionButtons = GetComponentsInChildren<PilotActionButton>(includeInactive:true);
         _collider = GetComponent<Collider2D>();
-    }
 
-    private void OnEnable()
-    {
         UIManager.Instance.OnResetUI += Close;
-        for (int i = 0; i < _pilotActionButtons.Length; i++)
-        {
-            _pilotActionButtons[i].gameObject.SetActive(false);
-        }
+        UIManager.Instance.OnDisableUI += DisableSelf;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         UIManager.Instance.OnResetUI -= Close;
+        UIManager.Instance.OnDisableUI -= DisableSelf;
     }
 
     private void OnMouseDown()
@@ -39,21 +34,24 @@ public class PilotButton : MonoBehaviour
 
     private void Open()
     {
-        //UIManager.Instance.OBackGroundDark(
-        UIManager.Instance.SetBackGround(true);
         for (int i = 0; i < _pilotActionButtons.Length; i++)
         {
             _pilotActionButtons[i].gameObject.SetActive(true);
         }
-        //gameObject.SetActive(false);
+        UIManager.Instance.OnDisableUI?.Invoke();
     }
 
     private void Close()
     {
-        UIManager.Instance.SetBackGround(false);
+        _collider.enabled = true;
         for (int i = 0; i < _pilotActionButtons.Length; i++)
         {
             _pilotActionButtons[i].gameObject.SetActive(false);
         }
+    }
+
+    private void DisableSelf()
+    {
+        _collider.enabled = false;
     }
 }
