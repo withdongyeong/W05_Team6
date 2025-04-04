@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      energyGuage_0: -1745306052532750326
+      energyGuage_1: 5990691506555355186
+      energyGuage_2: -3594557115304129493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
