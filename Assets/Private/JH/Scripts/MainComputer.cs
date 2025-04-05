@@ -9,7 +9,7 @@ public class MainComputer : MonoBehaviour
     private void Start()
     {
         _defaultScale = transform.localScale;
-
+        transform.position += Vector3.forward * 0.01f;
         UIManager.Instance.OnResetUI += ResetScale;
     }
 
@@ -20,13 +20,13 @@ public class MainComputer : MonoBehaviour
 
     public void Enlarge()
     {
-        transform.DOMoveZ(transform.position.z - 1, 0.2f);
+        transform.position -= Vector3.forward * 0.01f;
         transform.DOScale(_enlargeScale, 0.2f);
     }
 
     public void ResetScale ()
     {
-        transform.DOMoveZ(transform.position.z + 1, 0.2f);
+        transform.position += Vector3.forward * 0.01f;
         transform.DOScale(_defaultScale, 0.2f);
     }
 }
