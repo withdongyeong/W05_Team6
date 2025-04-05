@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Pilot : MonoBehaviour
@@ -14,9 +14,9 @@ public class Pilot : MonoBehaviour
     public bool IsPreparing => _isPreparing;
 
 
-    void Awake()
+    void Start()
     {
-        _player = GetComponentInParent<Player>();
+        _player = FindAnyObjectByType<Player>();
     }
     
     public void PrepareAction(PilotActionData actionData)

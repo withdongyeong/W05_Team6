@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -123,10 +123,7 @@ public class Enemy : MonoBehaviour
 
         var action = player.action;
 
-        return enemyAction.counteredBy.Exists(c =>
-            (c.type == "Combo" && action.type == "Combo" && c.id == action.id) ||
-            (c.type == "Normal" && c.pilot == action.pilot && c.id == action.id)
-        );
+        return enemyAction.counteredBy.Exists(c => (c.id == action.id));
     }
 
     public bool TakeDamage(float amount)
