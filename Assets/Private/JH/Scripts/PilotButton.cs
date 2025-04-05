@@ -12,8 +12,8 @@ public class PilotButton : MonoBehaviour
 
     private void Start()
     {
-        _player = GetComponentInParent<Player>();
-        _pilot = GetComponentInParent<Pilot>();
+        //_player = GetComponentInParent<Player>();
+        //_pilot = GetComponentInParent<Pilot>();
         _pilotActionButtons = GetComponentsInChildren<PilotActionButton>(includeInactive:true);
         _collider = GetComponent<Collider2D>();
 
