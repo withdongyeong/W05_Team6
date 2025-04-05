@@ -1,12 +1,55 @@
-{
+﻿{
   "enemyActions": [
     {
       "enemyId": "enemy_1",
-      "id": "E01",
+      "id": "FastAttack",
       "type": "Attack",
       "counteredBy": [
-        { "pilot": 1, "id": "01", "type": "Normal" },
-        { "pilot": 0, "id": "smallCombo", "type": "Combo" }
+        { "pilot": 0, "id": "Guard", "type": "Defense" },
+        { "pilot": 0, "id": "Jab", "type": "Attack" }
+      ]
+    },
+    {
+      "enemyId": "enemy_1",
+      "id": "MidiumAttack",
+      "type": "Attack",
+      "counteredBy": [
+        { "pilot": 0, "id": "Evasive", "type": "Defense" },
+        { "pilot": 0, "id": "Jab", "type": "Attack" },
+        { "pilot": 0, "id": "Uppercut", "type": "Attack" }
+      ]
+    },
+    {
+      "enemyId": "enemy_1",
+      "id": "HeavyAttack",
+      "type": "Attack",
+      "counteredBy": [
+        { "pilot": 0, "id": "Evasive", "type": "Defense" },
+        { "pilot": 0, "id": "Kick", "type": "Attack" },
+        { "pilot": 0, "id": "CounterAttack", "type": "Defense" }
+      ]
+    },
+    {
+      "enemyId": "enemy_1",
+      "id": "Shout",
+      "type": "Buff"
+    },
+    {
+      "enemyId": "enemy_1",
+      "id": "LaserAttack",
+      "type": "Attack",
+      "counteredBy": [
+        { "pilot": 0, "id": "Guard", "type": "Defense" },
+        { "pilot": 0, "id": "Kick", "type": "Attack" }
+      ]
+    },
+    {
+      "enemyId": "enemy_1",
+      "id": "Stab",
+      "type": "Attack",
+      "counteredBy": [
+        { "pilot": 0, "id": "Uppercut", "type": "Attack" },
+        { "pilot": 0, "id": "CounterAttack", "type": "Defense" }
       ]
     }
   ]

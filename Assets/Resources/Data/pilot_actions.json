@@ -1,12 +1,12 @@
-{
+﻿{
   "pilotActions": [
-    { "pilot": 1, "id": "01", "type": "Attack", "energyCost": 3 },
-    { "pilot": 1, "id": "02", "type": "Defense", "energyCost": 1 },
-    { "pilot": 2, "id": "01", "type": "Attack", "energyCost": 3 },
-    { "pilot": 2, "id": "02", "type": "Defense", "energyCost": 1 },
-    { "pilot": 3, "id": "01", "type": "Attack", "energyCost": 3 },
-    { "pilot": 3, "id": "02", "type": "Defense", "energyCost": 2 },
-    { "pilot": 4, "id": "01", "type": "Attack", "energyCost": 3 },
-    { "pilot": 4, "id": "02", "type": "Defense", "energyCost": 2 }
+    { "pilot": 1, "id": "Stretch", "type": "None", "energyCost": 1 },
+    { "pilot": 1, "id": "Bending", "type": "None", "energyCost": 1 },
+    { "pilot": 2, "id": "Stretch", "type": "None", "energyCost": 4 },
+    { "pilot": 2, "id": "Bending", "type": "None", "energyCost": 1 },
+    { "pilot": 3, "id": "Forward", "type": "None", "energyCost": 3 },
+    { "pilot": 3, "id": "Backward", "type": "None", "energyCost": 3 },
+    { "pilot": 4, "id": "Forward", "type": "None", "energyCost": 3 },
+    { "pilot": 4, "id": "Backward", "type": "None", "energyCost": 2 }
   ]
 }

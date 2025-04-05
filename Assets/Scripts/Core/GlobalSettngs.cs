@@ -6,7 +6,7 @@ public class GlobalSettings : MonoBehaviour
     public static GlobalSettings Instance { get; private set; }
 
     [Header("Game Settings")]
-    private float _comboCheckDuration = 1f;
+    private float _comboCheckDuration = 4f;
     private float _attackCheckDuration = 1f;
     private float _playerHpMax = 100f;
     private float _playerEnergyMax = 10f;
@@ -20,7 +20,7 @@ public class GlobalSettings : MonoBehaviour
     private float _enemyAttackDamage = 10f;
     private float _enemyActionInterval = 5f;
     private float _playerPrepareTime = 1f;
-    private float _enemyPrepareTime = 3f;
+    private float _enemyPrepareTime = 20f;
     private float _enemyCounteredTime = 3.0f;
 
     

@@ -60,10 +60,10 @@ public class Tester : MonoBehaviour
         // 행동 선택
         if (selectedPilot != null)
         {
-            if (Input.GetKeyDown(KeyCode.Q)) TriggerAction("01");
-            else if (Input.GetKeyDown(KeyCode.W)) TriggerAction("02");
-            else if (Input.GetKeyDown(KeyCode.E)) TriggerAction("03");
-            else if (Input.GetKeyDown(KeyCode.R)) TriggerAction("04");
+            if (Input.GetKeyDown(KeyCode.Q)) TriggerAction("Stretch");
+            else if (Input.GetKeyDown(KeyCode.W)) TriggerAction("Bending");
+            else if (Input.GetKeyDown(KeyCode.E)) TriggerAction("Forward");
+            else if (Input.GetKeyDown(KeyCode.R)) TriggerAction("Backward");
         }
 
         // 행동 취소

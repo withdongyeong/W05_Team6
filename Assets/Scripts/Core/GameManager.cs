@@ -115,7 +115,9 @@ public class GameManager : MonoBehaviour
                 ReceiveResolvedPlayerAction(new PendingAction
                 {
                     pilot = 5,
-                    action = new PilotActionData { pilot = 5, id = combo.result, type = "Combo" }
+                    action = new PilotActionData { pilot = 5, id = combo.result, type = combo.type,
+                    damage = combo.type == "Attack" || combo.result == "CounterAttack" ? combo.damage : 0,
+                    duration = combo.type == "Defense" ? combo.duration : 0}
                 });
 
                 foreach (var used in match)
@@ -133,12 +135,6 @@ public class GameManager : MonoBehaviour
             var current = _actionQueue[i];
             if (now - current.timestamp > GlobalSettings.Instance.ComboCheckDuration)
             {
-                ReceiveResolvedPlayerAction(new PendingAction
-                {
-                    pilot = current.pilot,
-                    action = current.action
-                });
-
                 _activePilotIds.Remove(current.pilot);
                 _actionQueue.RemoveAt(i);
             }
@@ -175,9 +171,9 @@ public class GameManager : MonoBehaviour
     {
         resolved.occurTime = Time.time;
         resolved.endTime = resolved.action.type == "Defense"
-            ? Time.time + GlobalSettings.Instance.DefenseBufferTime
+            ? Time.time + resolved.action.duration
             : Time.time;
-
+        
         _playerAction = resolved;
 
         if (_tester)
@@ -203,7 +199,7 @@ public class GameManager : MonoBehaviour
 
     void ResolvePlayerAction(PendingAction action)
     {
-        if (action.action.type == "Attack" || action.action.type == "Combo")
+        if (action.action.type == "Attack")
         {
             bool enemyBlocked = _enemyAction != null &&
                                 _enemyAction.type == "Defense" &&
@@ -216,7 +212,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                bool isAlive = _enemy.TakeDamage(GlobalSettings.Instance.PlayerDamage);
+                bool isAlive = _enemy.TakeDamage(action.action.damage);
                 _tester.UpdateResultText($"[Player] Pilot{action.pilot}_{action.action.id} 공격 → [Enemy] 피해 {(isAlive ? "입음" : "사망")}");
             }
         }
