@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject _energyUI;
-    public TextMeshProUGUI _statusUI;
+    public GameObject DefaultScreen;
+    public GameObject AttackManualScreen;
+    //public GameObject DefenseManualScreen;
+
+    public GameObject EnergyUI;
+    public TextMeshProUGUI StatusUI;
     public static UIManager Instance;
     public Action OnResetUI;
     public Action OnDisableUI;
@@ -28,8 +32,10 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        _energyUIText = _energyUI.GetComponentInChildren<TextMeshPro>();
-        _energyBar = _energyUI.GetComponentInChildren<EnergyBar>();
+        _energyUIText = EnergyUI.GetComponentInChildren<TextMeshPro>();
+        _energyBar = EnergyUI.GetComponentInChildren<EnergyBar>();
+
+        OnResetUI += SetDefaultScreen;
     }
 
     public void UpdateEnergyUI(int currentEnergy)
@@ -40,6 +46,20 @@ public class UIManager : MonoBehaviour
 
     public void UpdateStatusUI(string message)
     {
-        _statusUI.text = message;
+        StatusUI.text = message;
+    }
+
+    private void SetDefaultScreen()
+    {
+        DefaultScreen.SetActive(true);
+        AttackManualScreen.SetActive(false);
+        //DefenseManualScreen.SetActive(false);
+    }
+
+    public void SetAttackManualScreen()
+    {
+        AttackManualScreen.SetActive(true);
+        DefaultScreen.SetActive(false);
+        //DefenseManualScreen.SetActive(false);
     }
 }

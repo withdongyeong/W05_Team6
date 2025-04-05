@@ -12,6 +12,7 @@ public class BookIcon : MonoBehaviour
     private void OnMouseDown()
     {
         _mainComputer.Enlarge();
+        UIManager.Instance.SetAttackManualScreen();
         UIManager.Instance.OnDisableUI?.Invoke();
     }
 }
