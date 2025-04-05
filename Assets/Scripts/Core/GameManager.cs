@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     private ActionComboDataList _comboData;
     private Enemy _enemy;
+    public Player Player { get { return _player; } }
     private Player _player;
     private Tester _tester;
 
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
         public float occurTime;
         public float endTime;
     }
+
+    public Pilot[] Pilots;
 
     private List<TimedAction> _actionQueue = new();
     private HashSet<int> _activePilotIds = new();
