@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public GameObject _energyUI;
+    public TextMeshProUGUI _statusUI;
     public static UIManager Instance;
     public Action OnResetUI;
     public Action OnDisableUI;
@@ -35,5 +36,10 @@ public class UIManager : MonoBehaviour
     {
         _energyUIText.text = currentEnergy.ToString() + " / " + GlobalSettings.Instance.PlayerEnergyMax.ToString();
         _energyBar.UpdateEnergyBarUI(currentEnergy);
+    }
+
+    public void UpdateStatusUI(string message)
+    {
+        _statusUI.text = message;
     }
 }

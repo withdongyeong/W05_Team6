@@ -18,5 +18,6 @@ public class EnergyBar : MonoBehaviour
         {
             _sprites[i].color = 10-i <= currentEnergy ? fullEnergyColor : emptyEnergyColor;
         }
+
     }
 }

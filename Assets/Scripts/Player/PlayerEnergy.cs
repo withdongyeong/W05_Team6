@@ -26,5 +26,4 @@ public class PlayerEnergy : MonoBehaviour
         CurrentEnergy = Mathf.Clamp(CurrentEnergy + num, 0, GlobalSettings.Instance.PlayerEnergyMax);
         UIManager.Instance.UpdateEnergyUI((int)CurrentEnergy);
     }
-
 }
