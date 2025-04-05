@@ -6,14 +6,16 @@ public class PilotActionButton : MonoBehaviour
     public string actionId;
     
     private Player _player;
+    private int _pilotId;
     private Pilot _pilot;
     private PilotActionDataList _pilotActions;
 
 
     private void Start()
     {
-        _player = GetComponentInParent<Player>();
-        _pilot = GetComponentInParent<Pilot>();
+        _player = GameManager.Instance.Player;
+        _pilotId = GetComponentInParent<PilotButton>().pilotId;
+        _pilot = GameManager.Instance.Pilots[_pilotId];
         _pilotActions = DataLoader.LoadPilotActions();
     }
 
@@ -26,5 +28,6 @@ public class PilotActionButton : MonoBehaviour
         _player.IssueCommand(_pilot, matchedAction);
 
         UIManager.Instance.OnResetUI?.Invoke();
+
     }
 }
