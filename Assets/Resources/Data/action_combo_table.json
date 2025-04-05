@@ -2,18 +2,55 @@
   "actionCombos": [
     {
       "inputs": [
-        { "pilot": 1, "id": "01" },
-        { "pilot": 2, "id": "02" }
+        { "pilot": 1, "id": "02" },
+        { "pilot": 3, "id": "02" }
       ],
-      "result": "smallCombo"
+      "result": "LeftDefense"
     },
     {
       "inputs": [
         { "pilot": 2, "id": "02" },
-        { "pilot": 3, "id": "03" },
-        { "pilot": 4, "id": "04" }
+        { "pilot": 4, "id": "02" }
       ],
-      "result": "SuperCombo"
+      "result": "RightDefense"
+    },
+	{
+      "inputs": [
+        { "pilot": 3, "id": "02" },
+        { "pilot": 4, "id": "02" }
+      ],
+      "result": "Dodge"
+    },
+	
+	
+	{
+      "inputs": [
+        { "pilot": 1, "id": "01" },
+        { "pilot": 2, "id": "02" }
+      ],
+      "result": "LeftJab"
+    },
+	{
+      "inputs": [
+        { "pilot": 1, "id": "02" },
+        { "pilot": 2, "id": "01" }
+      ],
+      "result": "RightStraight"
+    },
+	{
+      "inputs": [
+        { "pilot": 1, "id": "01" },
+        { "pilot": 2, "id": "01" }
+      ],
+      "result": "MissileAttack"
+    },
+	{
+      "inputs": [
+        { "pilot": 1, "id": "01" },
+        { "pilot": 3, "id": "01" },
+        { "pilot": 4, "id": "01" }
+      ],
+      "result": "DashAttack"
     }
   ]
 }
