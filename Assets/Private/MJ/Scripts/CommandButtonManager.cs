@@ -27,8 +27,7 @@ public class CommandButtonManager : MonoBehaviour
             if (pilotAction.pilot == pilotIndex)
             {
                 string id = pilotAction.id;
-                Instantiate(buttonPrefab,transform);
-                Button button = buttonPrefab.GetComponent<Button>();
+                Button button = Instantiate(buttonPrefab,transform).GetComponent<Button>();
                 button.onClick.AddListener(()=> ExecuteCommand(pilotIndex,id));
                 button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = id;
             }
@@ -37,6 +36,7 @@ public class CommandButtonManager : MonoBehaviour
 
     public void ExecuteCommand(int pilotIndex, string commandIndex)
     {
+        Debug.Log("Command");
         Tester.Instance.ChangeSelectedPilot(pilotIndex);
         Tester.Instance.TriggerAction(commandIndex);
     }
