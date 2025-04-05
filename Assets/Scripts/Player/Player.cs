@@ -1,11 +1,12 @@
-using System;
+﻿using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 
 public class Player : MonoBehaviour
 {
-    private float _currentEnergy;
+    private PlayerEnergy _playerEnergy;
+
     private List<Pilot> _pilots = new();
     private float _currentHp;
     private float _hpMax;
@@ -14,28 +15,16 @@ public class Player : MonoBehaviour
     void Start()
     {
         _tester = FindAnyObjectByType<Tester>();
-        _currentEnergy = GlobalSettings.Instance.PlayerEnergyMax;
+        _playerEnergy = GetComponent<PlayerEnergy>();
+
         _hpMax = GlobalSettings.Instance.PlayerHpMax;
         _currentHp = _hpMax;
         _pilots.AddRange(GetComponentsInChildren<Pilot>());
-        StartCoroutine(EnergyRecoveryRoutine());
-    }
-
-    IEnumerator EnergyRecoveryRoutine()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1f);
-            _currentEnergy = Mathf.Min(
-                GlobalSettings.Instance.PlayerEnergyMax,
-                _currentEnergy + GlobalSettings.Instance.PlayerEnergyRecoveryPerSec
-            );
-        }
     }
 
     public bool CanIssueCommand(PilotActionData action)
     {
-        return _currentEnergy >= action.energyCost;
+        return _playerEnergy.CurrentEnergy >= action.energyCost;
     }
 
     public void IssueCommand(Pilot pilot, PilotActionData action)
@@ -51,8 +40,7 @@ public class Player : MonoBehaviour
             Debug.Log("Not enough energy");
             return;
         }
-        
-        _currentEnergy -= action.energyCost;
+        _playerEnergy.ChangeEnergy((int)-action.energyCost);
         pilot.PrepareAction(action);
     }
 
@@ -61,10 +49,7 @@ public class Player : MonoBehaviour
     {
         if (pilot.CancelAction())
         {
-            _currentEnergy = Mathf.Min(
-                GlobalSettings.Instance.PlayerEnergyMax,
-                _currentEnergy + GlobalSettings.Instance.ActionCancelRefundAmount
-            );
+            _playerEnergy.ChangeEnergy((int)GlobalSettings.Instance.ActionCancelRefundAmount);
         }
     }
     
