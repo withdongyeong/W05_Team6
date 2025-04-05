@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshPro _energyUIText;
+    public GameObject _energyUI;
     public static UIManager Instance;
     public Action OnResetUI;
     public Action OnDisableUI;
+
+    private TextMeshPro _energyUIText;
+    private EnergyBar _energyBar;
+
 
     private void Awake()
     {
@@ -21,8 +25,15 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        _energyUIText = _energyUI.GetComponentInChildren<TextMeshPro>();
+        _energyBar = _energyUI.GetComponentInChildren<EnergyBar>();
+    }
+
     public void UpdateEnergyUI(int currentEnergy)
     {
         _energyUIText.text = currentEnergy.ToString() + " / " + GlobalSettings.Instance.PlayerEnergyMax.ToString();
+        _energyBar.UpdateEnergyBarUI(currentEnergy);
     }
 }
