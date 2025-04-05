@@ -6,7 +6,7 @@ public class BookIcon : MonoBehaviour
 
     private void Start()
     {
-        _mainComputer = GetComponentInParent<MainComputer>();
+        _mainComputer = FindAnyObjectByType<MainComputer>();
     }
 
     private void OnMouseDown()
