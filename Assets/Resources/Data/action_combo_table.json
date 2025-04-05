@@ -7,7 +7,8 @@
       ],
       "result": "Jab",
       "type" : "Attack",
-      "damage" : 2
+      "damage" : 2,
+      "castingTime" : 2
     },
     {
       "inputs": [
@@ -16,7 +17,8 @@
       ],
       "result": "Uppercut",
       "type" : "Attack",
-      "damage" : 6
+      "damage" : 6,
+      "castingTime" : 4
     },
 	{
       "inputs": [
@@ -27,7 +29,8 @@
       "result": "CounterAttack",
       "type" : "Defense",
       "damage" : 8,
-      "duration" : 1
+      "duration" : 1,
+      "castingTime" : 3
     },
 	
 	
@@ -38,7 +41,8 @@
       ],
       "result": "Evasive",
       "type" : "Defense",
-      "duration" : 1
+      "duration" : 1,
+      "castingTime" : 1
     },
 	{
       "inputs": [
@@ -47,7 +51,8 @@
       ],
       "result": "Guard",
       "type" : "Defense",
-      "duration" : 5
+      "duration" : 5,
+      "castingTime" : 1
     },
 	{
       "inputs": [
@@ -57,7 +62,8 @@
       ],
       "result": "Kick",
       "type" : "Attack",
-      "damage" : 8
+      "damage" : 8,
+      "castingTime" : 6
     }
   ]
 }
