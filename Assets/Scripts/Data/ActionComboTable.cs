@@ -15,6 +15,7 @@ public class ComboData
     public string type; //어택인지, 디펜스인지.
     public int damage; // 데미지. 어택일 때만 존재.
     public float duration; //지속시간. 디펜스일 때만 존재.
+    public float castingTime; // 시전에 걸리는 시간.
 
 }
 

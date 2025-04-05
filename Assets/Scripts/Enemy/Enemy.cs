@@ -59,6 +59,7 @@ public class Enemy : MonoBehaviour
         if (_tester)
             _tester.UpdateEnemyText($"Enemy preparing action: {_currentAction.id}");
 
+        GameManager.Instance.Player.ChangePlayerEnergy(GlobalSettings.Instance.ChargeEnergyPerAction);
         // TODO: 준비 애니메이션 재생 위치
     }
 

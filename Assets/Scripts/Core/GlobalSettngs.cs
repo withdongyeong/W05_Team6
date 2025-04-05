@@ -14,6 +14,7 @@ public class GlobalSettings : MonoBehaviour
     private float _actionCancelRefundAmount = 5f;
     private float _playerDamage = 10f;
     private float _defenseBufferTime = 2f;
+    private int _chargeEnergyPerAction = 4;
     
     [Header("Enemy Settings")]
     private float _enemyMaxHp = 100f;
@@ -38,7 +39,9 @@ public class GlobalSettings : MonoBehaviour
     public float PlayerEnergyRecoveryPerSec => _playerEnergyRecoveryPerSec;
     public float ActionCancelRefundAmount => _actionCancelRefundAmount;
     public float EnemyMaxHp => _enemyMaxHp;
-    public float EnemyActionInterval => _enemyActionInterval; 
+    public float EnemyActionInterval => _enemyActionInterval;
+
+    public int ChargeEnergyPerAction => _chargeEnergyPerAction;
     
     void Awake()
     {

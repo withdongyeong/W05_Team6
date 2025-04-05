@@ -24,13 +24,15 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Start()
-    {
         _energyUIText = _energyUI.GetComponentInChildren<TextMeshPro>();
         _energyBar = _energyUI.GetComponentInChildren<EnergyBar>();
     }
+
+    //private void Start()
+    //{
+    //    _energyUIText = _energyUI.GetComponentInChildren<TextMeshPro>();
+    //    _energyBar = _energyUI.GetComponentInChildren<EnergyBar>();
+    //}
 
     public void UpdateEnergyUI(int currentEnergy)
     {
