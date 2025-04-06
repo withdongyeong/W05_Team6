@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private float _prepareStartTime;
     private float _nextActionTime;
     private float _counteredTime;
+    private Animator anim;
     
     [Header("Getter")]
     public EnemyActionState CurrentState => _state;
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
         actions = DataLoader.LoadEnemyActions().enemyActions.FindAll(a => a.enemyId == enemyId);
         _tester = FindAnyObjectByType<Tester>();
         _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -61,6 +63,8 @@ public class Enemy : MonoBehaviour
 
         GameManager.Instance.Player.ChangePlayerEnergy(GlobalSettings.Instance.ChargeEnergyPerAction);
         // TODO: 준비 애니메이션 재생 위치
+        anim.SetInteger("Prepare", 1); // 이거 나중에 actionCount +1로 해야함.
+
     }
 
     void MonitorForCounter()
@@ -89,6 +93,7 @@ public class Enemy : MonoBehaviour
             _tester.UpdateResultText($"[Counter] Enemy action was countered!");
 
         // TODO: 파훼 애니메이션/이펙트 등
+        anim.SetTrigger("Damaged");
     }
 
     void UpdateCounteredState()
@@ -106,11 +111,13 @@ public class Enemy : MonoBehaviour
     {
         if (isAlive && _currentAction != null)
         {
+            anim.SetTrigger("Attack");
             GameManager.Instance.ReceiveEnemyAction(_currentAction);
         }
 
         _currentAction = null;
         _state = EnemyActionState.Idle;
+        anim.SetInteger("Prepare", 0);
         _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
     }
 
@@ -130,12 +137,14 @@ public class Enemy : MonoBehaviour
     public bool TakeDamage(float amount)
     {
         currentHp -= amount;
+        anim.SetTrigger("Damaged");
         if (_tester) _tester.UpdateResultText($"Enemy took {amount} damage. Current HP: {currentHp}");
 
         if (currentHp <= 0)
         {
             isAlive = false;
             if (_tester) _tester.UpdateResultText($"{enemyId} Defeated!");
+            anim.SetTrigger("Dead");
             return false;
         }
         return true;

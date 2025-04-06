@@ -7,7 +7,7 @@
       ],
       "result": "Jab",
       "type" : "Attack",
-      "damage" : 2,
+      "damage" : 100,
       "castingTime" : 2
     },
     {

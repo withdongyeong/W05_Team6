@@ -7,7 +7,7 @@ public class EnergyBar : MonoBehaviour
     private SpriteRenderer[] _sprites;
 
 
-    private void Start()
+    private void Awake()
     {
         _sprites = GetComponentsInChildren<SpriteRenderer>();
     }

@@ -11,15 +11,18 @@ public class Player : MonoBehaviour
     private float _currentHp;
     private float _hpMax;
     private Tester _tester;
-    
-    void Start()
+
+    private void Awake()
     {
+        _pilots.AddRange(GetComponentsInChildren<Pilot>());
         _tester = FindAnyObjectByType<Tester>();
         _playerEnergy = GetComponent<PlayerEnergy>();
-
+    }
+    void Start()
+    {
         _hpMax = GlobalSettings.Instance.PlayerHpMax;
         _currentHp = _hpMax;
-        _pilots.AddRange(GetComponentsInChildren<Pilot>());
+    
     }
 
     public bool CanIssueCommand(PilotActionData action)
@@ -76,5 +79,10 @@ public class Player : MonoBehaviour
     public void ChangePlayerEnergy(int num)
     {
         _playerEnergy.ChangeEnergy(num);
+    }
+
+    public List<Pilot> GetPilots()
+    {
+        return _pilots;
     }
 }

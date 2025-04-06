@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,8 +29,6 @@ public class GameManager : MonoBehaviour
         public float endTime;
     }
 
-    public Pilot[] Pilots;
-
     private List<TimedAction> _actionQueue = new();
     private HashSet<int> _activePilotIds = new();
 
@@ -38,14 +37,23 @@ public class GameManager : MonoBehaviour
     private float _enemyOccurTime;
     private float _enemyEndTime;
 
-    void Awake() => Instance = this;
+    public List<Pilot> Pilots;
 
-    void Start()
+    public Action pilotActionOver;
+
+    void Awake()
     {
+        if (GameManager.Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
         _tester = FindAnyObjectByType<Tester>();
         _comboData = DataLoader.LoadActionCombos();
         _enemy = FindAnyObjectByType<Enemy>();
         _player = FindAnyObjectByType<Player>();
+    }
+    void Start()
+    {
         StartCoroutine(ComboProcessingLoop());
     }
 
@@ -149,6 +157,7 @@ public class GameManager : MonoBehaviour
             if (now - current.timestamp > GlobalSettings.Instance.ComboCheckDuration)
             {
                 _activePilotIds.Remove(current.pilot);
+                pilotActionOver();
                 _actionQueue.RemoveAt(i);
             }
             else
@@ -184,6 +193,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(time + "만큼 기다리기 시작!");
         yield return new WaitForSeconds(time);
         ReceiveResolvedPlayerAction(combo);
+        pilotActionOver();
     }
 
     void ReceiveResolvedPlayerAction(PendingAction resolved)
@@ -267,5 +277,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    
 
 }
