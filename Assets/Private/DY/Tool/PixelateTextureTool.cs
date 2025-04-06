@@ -75,6 +75,8 @@ public class PixelateTextureTool : EditorWindow
             for (int x = 0; x < original.width; x += blockSize)
             {
                 Color avg = AverageBlock(original, x, y, blockSize);
+                if (avg.a < 0.9f)
+                    avg = new Color(0, 0, 0, 0);
                 FillBlock(copy, x, y, blockSize, avg);
             }
         }
