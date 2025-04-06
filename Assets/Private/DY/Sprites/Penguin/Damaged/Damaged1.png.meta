@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 04329906b2f42be47ac939413fc730d3
+guid: 741df2804dbce404fb98f530c47b0755
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1375000289819438870
-    second: SkillDescription 1_0
+      213: -5509013893804199648
+    second: Damaged1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SkillDescription 1_0
+      name: Damaged1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 500
-        height: 240
+        x: 79
+        y: 43
+        width: 330
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61f2fb08a7bf41310800000000000000
-      internalID: 1375000289819438870
+      spriteID: 021fb153d0d0c83b0800000000000000
+      internalID: -5509013893804199648
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SkillDescription 1_0: 1375000289819438870
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

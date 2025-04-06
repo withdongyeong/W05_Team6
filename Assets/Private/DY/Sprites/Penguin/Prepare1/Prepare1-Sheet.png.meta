@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 04329906b2f42be47ac939413fc730d3
+guid: e8e561304be9f054d9a921423c78a85d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1375000289819438870
-    second: SkillDescription 1_0
+      213: -375756867473332523
+    second: Prepare1-Sheet_0
+  - first:
+      213: -8355822945612080515
+    second: Prepare1-Sheet_1
+  - first:
+      213: -6303673505955256601
+    second: Prepare1-Sheet_2
+  - first:
+      213: -1613699805008676818
+    second: Prepare1-Sheet_3
+  - first:
+      213: 4146263138620191432
+    second: Prepare1-Sheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SkillDescription 1_0
+      name: Prepare1-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 500
-        height: 240
+        x: 79
+        y: 43
+        width: 330
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61f2fb08a7bf41310800000000000000
-      internalID: 1375000289819438870
+      spriteID: 5d6a650be1b09caf0800000000000000
+      internalID: -375756867473332523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prepare1-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 43
+        width: 435
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7adbb05d472a0c80800000000000000
+      internalID: -8355822945612080515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prepare1-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 43
+        width: 430
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e6ee79385ad488a0800000000000000
+      internalID: -6303673505955256601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prepare1-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 43
+        width: 430
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28375cb39cfa99e0800000000000000
+      internalID: -1613699805008676818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prepare1-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2026
+        y: 43
+        width: 435
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2b0c25b5c7a8930800000000000000
+      internalID: 4146263138620191432
       vertices: []
       indices: 
       edges: []
@@ -134,8 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SkillDescription 1_0: 1375000289819438870
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

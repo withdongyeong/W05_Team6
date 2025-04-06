@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 04329906b2f42be47ac939413fc730d3
+guid: 39d78f4dda1769f49afd1d0e961aa2cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1375000289819438870
-    second: SkillDescription 1_0
+      213: -2920486823954647575
+    second: Preparing1-Sheet_0
+  - first:
+      213: -9148596502443345613
+    second: Preparing1-Sheet_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SkillDescription 1_0
+      name: Preparing1-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 500
-        height: 240
+        x: 113
+        y: 15
+        width: 728
+        height: 974
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61f2fb08a7bf41310800000000000000
-      internalID: 1375000289819438870
+      spriteID: 9e579fef4b85877d0800000000000000
+      internalID: -2920486823954647575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Preparing1-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 15
+        width: 728
+        height: 974
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339bb7ec3f7a90180800000000000000
+      internalID: -9148596502443345613
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SkillDescription 1_0: 1375000289819438870
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

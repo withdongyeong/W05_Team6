@@ -28,14 +28,14 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Start()
-    {
         _energyUIText = EnergyUI.GetComponentInChildren<TextMeshPro>();
         _energyBar = EnergyUI.GetComponentInChildren<EnergyBar>();
 
         OnResetUI += SetDefaultScreen;
+    }
+
+    private void Start()
+    {
     }
 
     public void UpdateEnergyUI(int currentEnergy)

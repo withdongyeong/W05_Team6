@@ -11,12 +11,14 @@ public class Player : MonoBehaviour
     private float _currentHp;
     private float _hpMax;
     private Tester _tester;
-    
-    void Start()
+
+    void Awake()
     {
         _tester = FindAnyObjectByType<Tester>();
         _playerEnergy = GetComponent<PlayerEnergy>();
-
+    }
+    private void Start()
+    {
         _hpMax = GlobalSettings.Instance.PlayerHpMax;
         _currentHp = _hpMax;
         _pilots.AddRange(GetComponentsInChildren<Pilot>());
