@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("[Enemy] Countered state ended → Returning to Idle");
             _state = EnemyActionState.Idle;
-            _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
+            _nextActionTime = Time.time + 1f; // 카운터 당한 후에는 바로 다시 액션 실행
         }
     }
 
