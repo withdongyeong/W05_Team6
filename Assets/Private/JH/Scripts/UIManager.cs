@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject DefaultScreen;
     public GameObject AttackManualScreen;
-    //public GameObject DefenseManualScreen;
+    public GameObject DefenseManualScreen;
 
     public GameObject EnergyUI;
     public TextMeshProUGUI StatusUI;
@@ -53,13 +53,20 @@ public class UIManager : MonoBehaviour
     {
         DefaultScreen.SetActive(true);
         AttackManualScreen.SetActive(false);
-        //DefenseManualScreen.SetActive(false);
+        DefenseManualScreen.SetActive(false);
     }
 
     public void SetAttackManualScreen()
     {
-        AttackManualScreen.SetActive(true);
         DefaultScreen.SetActive(false);
-        //DefenseManualScreen.SetActive(false);
+        AttackManualScreen.SetActive(true);
+        DefenseManualScreen.SetActive(false);
+    }
+
+    public void SetDefenseManualScreen()
+    {
+        DefaultScreen.SetActive(false);
+        DefenseManualScreen.SetActive(true);
+        AttackManualScreen.SetActive(false);
     }
 }
