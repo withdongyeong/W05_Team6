@@ -8,8 +8,7 @@ public class PlayerEnergy : MonoBehaviour
 
     private void Start()
     {
-        _currentEnergy = GlobalSettings.Instance.PlayerEnergyMax;
-        StartCoroutine(EnergyRecoveryRoutine());
+        ChangeEnergy(4);
     }
 
     IEnumerator EnergyRecoveryRoutine()

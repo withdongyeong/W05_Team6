@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +22,13 @@ public class CommandButtonManager : MonoBehaviour
 
     public void CreateButton(int pilotIndex)
     {
+        if(transform.childCount > 1)
+        {
+            for(int i=transform.childCount-1; i>=1; i--)
+            {
+                Destroy(transform.GetChild(i).gameObject);
+            }
+        }
         foreach (PilotActionData pilotAction in _pilotActions.pilotActions)
         {
             if (pilotAction.pilot == pilotIndex)

@@ -1,56 +1,69 @@
-{
+﻿{
   "actionCombos": [
     {
       "inputs": [
-        { "pilot": 1, "id": "02" },
-        { "pilot": 3, "id": "02" }
+        { "pilot": 1, "id": "Stretch" },
+        { "pilot": 3, "id": "Forward" }
       ],
-      "result": "LeftDefense"
+      "result": "Jab",
+      "type" : "Attack",
+      "damage" : 2,
+      "castingTime" : 2
     },
     {
       "inputs": [
-        { "pilot": 2, "id": "02" },
-        { "pilot": 4, "id": "02" }
+        { "pilot": 2, "id": "Stretch" },
+        { "pilot": 3, "id": "Backward" }
       ],
-      "result": "RightDefense"
+      "result": "Uppercut",
+      "type" : "Attack",
+      "damage" : 6,
+      "castingTime" : 4
     },
 	{
       "inputs": [
-        { "pilot": 3, "id": "02" },
-        { "pilot": 4, "id": "02" }
+        { "pilot": 3, "id": "Backward" },
+        { "pilot": 4, "id": "Forward" },
+        { "pilot": 1, "id": "Stretch" }
       ],
-      "result": "Dodge"
+      "result": "CounterAttack",
+      "type" : "Defense",
+      "damage" : 8,
+      "duration" : 1,
+      "castingTime" : 3
     },
 	
 	
 	{
       "inputs": [
-        { "pilot": 1, "id": "01" },
-        { "pilot": 2, "id": "02" }
+        { "pilot": 3, "id": "Backward" },
+        { "pilot": 4, "id": "Backward" }
       ],
-      "result": "LeftJab"
+      "result": "Evasive",
+      "type" : "Defense",
+      "duration" : 1,
+      "castingTime" : 1
     },
 	{
       "inputs": [
-        { "pilot": 1, "id": "02" },
-        { "pilot": 2, "id": "01" }
+        { "pilot": 1, "id": "Bending" },
+        { "pilot": 2, "id": "Bending" }
       ],
-      "result": "RightStraight"
+      "result": "Guard",
+      "type" : "Defense",
+      "duration" : 5,
+      "castingTime" : 1
     },
 	{
       "inputs": [
-        { "pilot": 1, "id": "01" },
-        { "pilot": 2, "id": "01" }
+        { "pilot": 3, "id": "Forward" },
+        { "pilot": 1, "id": "Bending" },
+        { "pilot": 2, "id": "Stretch" }
       ],
-      "result": "MissileAttack"
-    },
-	{
-      "inputs": [
-        { "pilot": 1, "id": "01" },
-        { "pilot": 3, "id": "01" },
-        { "pilot": 4, "id": "01" }
-      ],
-      "result": "DashAttack"
+      "result": "Kick",
+      "type" : "Attack",
+      "damage" : 8,
+      "castingTime" : 6
     }
   ]
 }
