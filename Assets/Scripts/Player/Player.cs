@@ -73,4 +73,8 @@ public class Player : MonoBehaviour
         else return true;
     }
 
+    public void ChangePlayerEnergy(int num)
+    {
+        _playerEnergy.ChangeEnergy(num);
+    }
 }

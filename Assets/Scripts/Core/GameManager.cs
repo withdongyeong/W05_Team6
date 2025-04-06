@@ -112,13 +112,26 @@ public class GameManager : MonoBehaviour
             var match = TryMatchCombo(windowedActions, combo);
             if (match != null)
             {
-                ReceiveResolvedPlayerAction(new PendingAction
+                StartCoroutine(CastingCombo(new PendingAction
                 {
                     pilot = 5,
-                    action = new PilotActionData { pilot = 5, id = combo.result, type = combo.type,
-                    damage = combo.type == "Attack" || combo.result == "CounterAttack" ? combo.damage : 0,
-                    duration = combo.type == "Defense" ? combo.duration : 0}
-                });
+                    action = new PilotActionData
+                    {
+                        pilot = 5,
+                        id = combo.result,
+                        type = combo.type,
+                        damage = combo.type == "Attack" || combo.result == "CounterAttack" ? combo.damage : 0,
+                        duration = combo.type == "Defense" ? combo.duration : 0
+                    }
+                }, 
+                combo.castingTime));
+                //ReceiveResolvedPlayerAction(new PendingAction
+                //{
+                //    pilot = 5,
+                //    action = new PilotActionData { pilot = 5, id = combo.result, type = combo.type,
+                //    damage = combo.type == "Attack" || combo.result == "CounterAttack" ? combo.damage : 0,
+                //    duration = combo.type == "Defense" ? combo.duration : 0}
+                //});
 
                 foreach (var used in match)
                 {
@@ -166,6 +179,12 @@ public class GameManager : MonoBehaviour
         return matched;
     }
 
+    IEnumerator CastingCombo(PendingAction combo, float time)
+    {
+        Debug.Log(time + "만큼 기다리기 시작!");
+        yield return new WaitForSeconds(time);
+        ReceiveResolvedPlayerAction(combo);
+    }
 
     void ReceiveResolvedPlayerAction(PendingAction resolved)
     {
