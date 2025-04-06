@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 [System.Serializable]
 public class CounterInfo
@@ -15,6 +15,7 @@ public class EnemyActionData
     public string enemyId;
     public string id;
     public string type;
+    public float castingTime;
     public List<CounterInfo> counteredBy;
 }
 

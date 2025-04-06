@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        if (Time.time >= _prepareStartTime + GlobalSettings.Instance.EnemyPrepareTime)
+        if (Time.time >= _prepareStartTime + _currentAction.castingTime)
         {
             _state = EnemyActionState.Executing;
             ExecuteCurrentAction();
@@ -94,6 +94,7 @@ public class Enemy : MonoBehaviour
 
         // TODO: 파훼 애니메이션/이펙트 등
         anim.SetTrigger("Damaged");
+        anim.SetInteger("Prepare", 0);
     }
 
     void UpdateCounteredState()
@@ -103,7 +104,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("[Enemy] Countered state ended → Returning to Idle");
             _state = EnemyActionState.Idle;
-            _nextActionTime = Time.time + 1f; // 카운터 당한 후에는 바로 다시 액션 실행
+            _nextActionTime = Time.time + 3f; // 카운터 당한 후에는 바로 다시 액션 실행
         }
     }
 
@@ -111,6 +112,12 @@ public class Enemy : MonoBehaviour
     {
         if (isAlive && _currentAction != null)
         {
+            var playerAction = GameManager.Instance.GetCurrentPlayerAction();
+            if (IsCounteredAfterExecute(_currentAction, playerAction))
+            {
+                EnterCounteredState();
+                return;
+            }
             anim.SetTrigger("Attack");
             GameManager.Instance.ReceiveEnemyAction(_currentAction);
         }
@@ -121,6 +128,7 @@ public class Enemy : MonoBehaviour
         _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
     }
 
+    //준비중에는 공격 콤보에만 카운터당함.
     bool IsCounteredAfterPrepare(EnemyActionData enemyAction, GameManager.PendingAction player)
     {
         if (enemyAction == null || enemyAction.counteredBy == null || player == null)
@@ -131,7 +139,25 @@ public class Enemy : MonoBehaviour
 
         var action = player.action;
 
+        if (player.action.type != "Attack")
+            return false;
+        else
+            return enemyAction.counteredBy.Exists(c => (c.id == action.id));
+    }
+
+    //방어에도 카운터 당함.
+    bool IsCounteredAfterExecute(EnemyActionData enemyAction, GameManager.PendingAction player)
+    {
+        if (enemyAction == null || enemyAction.counteredBy == null || player == null)
+            return false;
+
+        if (player.occurTime < _prepareStartTime)
+            return false;
+
+        var action = player.action;
+
         return enemyAction.counteredBy.Exists(c => (c.id == action.id));
+
     }
 
     public bool TakeDamage(float amount)
