@@ -105,6 +105,7 @@ public class Enemy : MonoBehaviour
             _tester.UpdateResultText($"[Counter] Enemy action was countered!");
 
         // TODO: 파훼 애니메이션/이펙트 등
+        anim.SetInteger("Prepare", 0);
         anim.SetTrigger("Damaged");
     }
 
@@ -174,7 +175,7 @@ public class Enemy : MonoBehaviour
     public bool TakeDamage(float amount)
     {
         currentHp -= amount;
-        anim.SetTrigger("Damaged");
+        //anim.SetTrigger("Damaged");
         if (_tester) _tester.UpdateResultText($"Enemy took {amount} damage. Current HP: {currentHp}");
 
         if (currentHp <= 0)
