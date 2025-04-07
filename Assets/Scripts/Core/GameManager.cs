@@ -263,7 +263,7 @@ public class GameManager : MonoBehaviour
         {
             string text;
             if (!KoreanMapping.EnemySkill.TryGetValue(action.id, out text)) text = action.id;
-            _tester.UpdateEnemyText($"적 {text}\n실행");
+            _tester.UpdateEnemyText($"{text}!");
         }
 
         ResolveEnemyAction(action);
@@ -331,6 +331,12 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd(bool isClear)
     {
+        StartCoroutine(GameEndCo(isClear));
+    }
+
+    IEnumerator GameEndCo(bool isClear)
+    {
+        yield return new WaitForSeconds(isClear ? 4f : 2f);
         UIManager.Instance.SetGameEndPanel(isClear);
         Time.timeScale = 0;
     }
