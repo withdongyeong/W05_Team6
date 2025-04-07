@@ -561,6 +561,10 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7605087760224023507, guid: b031714787634d64d924698b0c485614, type: 3}
+      propertyPath: m_text
+      value: "\uBC29\uC5B4"
+      objectReference: {fileID: 0}
     - target: {fileID: 8863097516292893149, guid: b031714787634d64d924698b0c485614, type: 3}
       propertyPath: m_Name
       value: ManualTab2
@@ -996,6 +1000,10 @@ PrefabInstance:
     - target: {fileID: 3622530181717587039, guid: b031714787634d64d924698b0c485614, type: 3}
       propertyPath: m_SortingLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605087760224023507, guid: b031714787634d64d924698b0c485614, type: 3}
+      propertyPath: m_text
+      value: "\uACF5\uACA9"
       objectReference: {fileID: 0}
     - target: {fileID: 8863097516292893149, guid: b031714787634d64d924698b0c485614, type: 3}
       propertyPath: m_Name
