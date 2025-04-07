@@ -40,7 +40,7 @@ public class SplineFollowerWithRotation : MonoBehaviour
             yield break;
         }
 
-        float moveDuration = 1f;
+        float moveDuration = 0.3f;
         float timer = 0f;
 
         while (timer < moveDuration)
@@ -63,7 +63,7 @@ public class SplineFollowerWithRotation : MonoBehaviour
         Quaternion endRotation = transform.rotation;
 
         // 복귀
-        float returnDuration = 2f;
+        float returnDuration = 1f;
         float returnTimer = 0f;
 
         while (returnTimer < returnDuration)

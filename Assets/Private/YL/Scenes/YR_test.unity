@@ -2484,6 +2484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee856a3e2c5bfc94782d3b0e1415524b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineController: {fileID: 2092783418}
 --- !u!1 &2042365468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,7 +2790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8f42f06bbc36c4ba6a80a091ccaec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 0}
+  cameraController: {fileID: 2001690548}
 --- !u!114 &2092783417
 MonoBehaviour:
   m_ObjectHideFlags: 0
