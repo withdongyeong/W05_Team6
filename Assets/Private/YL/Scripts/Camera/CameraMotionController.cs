@@ -29,6 +29,7 @@ public class CameraMotionController : MonoBehaviour
     public void StartZoomInOut() => StartCoroutine(ZoomInOut());
     public void StartZoomIn() => StartCoroutine(ZoomIn());
     public void StartTilt() => StartCoroutine(Tilt());
+    public void StartShake() => StartCoroutine(Shake());
 
     private IEnumerator BounceJap()
     {
@@ -152,6 +153,25 @@ public class CameraMotionController : MonoBehaviour
         yield return ChangeFOV(60f, initialFov, duration);
     }
 
+    private IEnumerator Shake()
+    {
+        float duration = 0.2f; // 각 단계당 시간
+
+        Quaternion startRot = initialRotation;
+        Quaternion rotRight = Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, 3f);
+        Quaternion rotLeft = Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y, -3f);
+
+        // 0 → 3도
+        yield return RotateTo(startRot, rotRight, duration);
+
+        // 3도 → -3도
+        yield return RotateTo(rotRight, rotLeft, duration * 2);
+
+        // -3도 → 0도
+        yield return RotateTo(rotLeft, startRot, duration);
+    }
+
+
     private IEnumerator Tilt()
     {
         Quaternion tilted = Quaternion.Euler(2.5f, transform.localEulerAngles.y, transform.localEulerAngles.z);
@@ -165,7 +185,7 @@ public class CameraMotionController : MonoBehaviour
         splineController.SendMessage("TriggerSpline", "GardRightSpline");
 
         // Spline이 2초간 재생된다고 가정 (혹은 WaitUntil 사용 가능)
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(5.3f);
 
         // 기울이기 완료 대기
         yield return tiltRoutine;
