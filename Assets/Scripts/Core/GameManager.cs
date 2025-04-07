@@ -299,6 +299,7 @@ public class GameManager : MonoBehaviour
     {
         if (action.type == "Attack")
         {
+            Invoke("CameraShake", 0.7f);
             bool isAlive = _player.TakeDamage(action.damage);
             _tester.UpdateResultText($"[Enemy] {action.id} 공격 → [Player] 피해 {(isAlive ? "입음" : "사망")}");
         }
@@ -332,5 +333,10 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.SetGameEndPanel(isClear);
         Time.timeScale = 0;
+    }
+
+    private void CameraShake()
+    {
+        _mainCamera.StartShake();
     }
 }
