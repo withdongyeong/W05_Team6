@@ -74,37 +74,34 @@ public class CameraMotionController : MonoBehaviour
         float halfDuration = 0.2f;
 
         Vector3 upPos = initialPosition + Vector3.up * 0.2f;
-        Vector3 rightPos = initialPosition + Vector3.right * 0.1f;
-        Vector3 targetPos = upPos + Vector3.right * 1f;
 
-        // Y축 + Z회전 애니메이션 시작 (튕김)
+        // 1. 위로 튀기고 Z회전
         StartCoroutine(AnimatePositionAndZRotation(initialPosition, upPos, 0.2f, halfDuration));
         yield return new WaitForSeconds(halfDuration);
+
         StartCoroutine(AnimatePositionAndZRotation(upPos, initialPosition, -0.2f, halfDuration));
         StartCoroutine(ChangeFOV(cam.fieldOfView, 54f, duration));
         yield return new WaitForSeconds(halfDuration);
+
         StartCoroutine(AnimateZRotation(-0.2f, 0f, duration));
 
-
+        // 2. Y축 회전 (살짝 고개 틀기 느낌)
         Quaternion rotatedY = Quaternion.Euler(transform.localEulerAngles.x, transform.localEulerAngles.y + 0.2f, transform.localEulerAngles.z);
         Quaternion originalRot = transform.localRotation;
-        // X축으로 동시에 이동 + JapSpline 즉시 실행
-        
 
-        splineController.SendMessage("TriggerSpline", "KickSpline");
         yield return new WaitForSeconds(halfDuration);
         StartCoroutine(RotateTo(originalRot, rotatedY, duration));
-        // 3. 동시에 복귀: 위치 + FOV
+
+        // 3. 복귀 (회전 + FOV 동시에)
         yield return new WaitForSeconds(1f);
 
         Coroutine rotBack = StartCoroutine(RotateTo(rotatedY, originalRot, duration));
         Coroutine fovBack = StartCoroutine(ChangeFOV(54f, initialFov, duration));
 
-        // 둘 다 끝날 때까지 기다림
         yield return rotBack;
         yield return fovBack;
-
     }
+
 
     private IEnumerator Fall()
     {
