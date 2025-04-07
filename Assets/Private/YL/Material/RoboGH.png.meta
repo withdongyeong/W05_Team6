@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RoboGH_0: 2287994757042853339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
