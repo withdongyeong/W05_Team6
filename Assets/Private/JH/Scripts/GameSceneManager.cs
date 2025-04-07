@@ -6,11 +6,13 @@ public class GameSceneManager : MonoBehaviour
 {
     public void GoMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("TitleScene");
     }
 
     public void GoStartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainScene");
     }
 

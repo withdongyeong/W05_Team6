@@ -96,10 +96,10 @@ public class Enemy : MonoBehaviour
                 if (KoreanMapping.PlayerSkill.TryGetValue(counterInfos[i].id, out string infoText))
                 {
                     Debug.Log(infoText);
-                    counterText += ("   " +infoText + "\n");
+                    counterText += ("\t" +infoText + "\n");
                 }
             }
-            fullText = $"적 {text}\n준비 중 \n \n추천 행동 : \n" + counterText;
+            fullText = $"{text} 감지... \n \n추천 행동 : \n" + counterText;
             textLength = 0;
             TypeFullText();
         }
