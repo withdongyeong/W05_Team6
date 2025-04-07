@@ -227,7 +227,11 @@ public class GameManager : MonoBehaviour
         _playerAction = resolved;
 
         if (_tester)
-            _tester.UpdatePlayerText($"Player Action Executed: Pilot{resolved.pilot}_{resolved.action.id} [{resolved.action.type}]");
+        {
+            string text;
+            if (!KoreanMapping.PlayerSkill.TryGetValue(resolved.action.id, out text)) text = resolved.action.id;
+            _tester.UpdatePlayerText($"{text}");
+        }
 
         ResolvePlayerAction(resolved);
     }
@@ -241,7 +245,11 @@ public class GameManager : MonoBehaviour
             : Time.time;
 
         if (_tester)
-            _tester.UpdateEnemyText($"Enemy Action Executed: {action.id}");
+        {
+            string text;
+            if (!KoreanMapping.EnemySkill.TryGetValue(action.id, out text)) text = action.id;
+            _tester.UpdateEnemyText($"적 {text}\n실행");
+        }
 
         ResolveEnemyAction(action);
     }

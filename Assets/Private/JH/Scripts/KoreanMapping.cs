@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 public class KoreanMapping
 {
-    Dictionary<string, string> PlayerSkill = new Dictionary<string, string>()
+    public static Dictionary<string, string> PlayerSkill = new Dictionary<string, string>()
     {
         { "Jab", "잽"},
         { "Uppercut", "어퍼컷"},
@@ -14,7 +14,7 @@ public class KoreanMapping
         { "Kick", "킥"},
     };
 
-    Dictionary<string, string> EnemySkill = new Dictionary<string, string>()
+    public static Dictionary<string, string> EnemySkill = new Dictionary<string, string>()
     {
         { "FastAttack", "오른팔 공격"},
         { "MidiumAttack", "왼팔 공격"},
@@ -24,7 +24,7 @@ public class KoreanMapping
         { "Stab", "부리 찌르기"},
     };
 
-    Dictionary<string, string> PilotAction = new Dictionary<string, string>()
+    public static Dictionary<string, string> PilotAction = new Dictionary<string, string>()
     {
         { "Stretch", "뻗기"},
         { "Bending", "구부리기"},

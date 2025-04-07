@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class Enemy : MonoBehaviour
 {
@@ -71,7 +72,12 @@ public class Enemy : MonoBehaviour
         _state = EnemyActionState.Preparing;
 
         if (_tester)
-            _tester.UpdateEnemyText($"Enemy preparing action: {_currentAction.id}");
+        {
+            string text;
+            if (!KoreanMapping.EnemySkill.TryGetValue(_currentAction.id, out text)) text = _currentAction.id;
+            _tester.UpdateEnemyText($"적 {text}\n준비 중");
+        }
+
 
         GameManager.Instance.Player.ChangePlayerEnergy(GlobalSettings.Instance.ChargeEnergyPerAction);
         // TODO: 준비 애니메이션 재생 위치

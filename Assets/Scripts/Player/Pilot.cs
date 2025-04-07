@@ -40,7 +40,7 @@ public class Pilot : MonoBehaviour
     IEnumerator PrepareAndExecute(PilotActionData actionData)
     {
         Tester tester = FindAnyObjectByType<Tester>();
-        if (tester) tester.UpdatePlayerText($"Pilot {pilotId} preparing action {actionData.id}");
+        //if (tester) tester.UpdatePlayerText($"Pilot {pilotId} preparing action {actionData.id}");
         
         yield return new WaitForSeconds(GlobalSettings.Instance.PlayerPrepareTime);
 
