@@ -42,11 +42,12 @@ public class GameManager : MonoBehaviour
 
     public Action pilotActionOver;
 
-    private Action startBounce;
+    private Action startBounceJap;
     private Action startFall;
     private Action startZoomInOut;
     private Action startZoomIn;
     private Action startTilt;
+    private Action startBouneKick;
 
     private List<Action> cameraActions;
     public CameraMotionController _mainCamera { get; private set; }
@@ -69,11 +70,12 @@ public class GameManager : MonoBehaviour
         SubscribeCameraFunc();//밑의 cameraactions에 들어갈 이벤트들 구독
         cameraActions = new()
         {
-            startBounce,
+            startBounceJap,
             startFall,
             startZoomInOut,
             startZoomIn,
-            startTilt
+            startTilt,
+            startBouneKick
         };
     }
 
@@ -317,11 +319,12 @@ public class GameManager : MonoBehaviour
     //액션이랑 카메라 함수들 매칭.
     private void SubscribeCameraFunc()
     {
-        startBounce += _mainCamera.StartBounce;
+        startBounceJap += _mainCamera.StartBounceJap;
         startFall += _mainCamera.StartFall;
         startTilt += _mainCamera.StartTilt;
         startZoomIn += _mainCamera.StartZoomIn;
         startZoomInOut += _mainCamera.StartZoomInOut;
+        startBouneKick += _mainCamera.StartBounceKick;
     }
 
     public void GameEnd(bool isClear)

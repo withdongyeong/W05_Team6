@@ -18,6 +18,7 @@ public class GlobalSettings : MonoBehaviour
     private float _playerDamage = 10f;
     private float _defenseBufferTime = 2f;
     private int _chargeEnergyPerAction = 4;
+    private float _shatterEffectDuration = 3f;
 
     [Header("Enemy Settings")]
     private float _enemyMaxHp = 6f;
@@ -48,6 +49,8 @@ public class GlobalSettings : MonoBehaviour
     public int ChargeEnergyPerAction => _chargeEnergyPerAction;
 
     public List<string> AttackBeforeShout => _attackBeforeShout;
+
+    public float ShatterEffectDuration => _shatterEffectDuration;
 
     void Awake()
     {

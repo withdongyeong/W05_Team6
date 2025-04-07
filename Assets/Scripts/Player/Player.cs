@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private float _currentHp;
     private float _hpMax;
     private Tester _tester;
+    public Action ShatterAction;
 
     private void Awake()
     {
@@ -59,6 +60,8 @@ public class Player : MonoBehaviour
     public bool TakeDamage(float amount)
     {
         _currentHp -= amount;
+        ShatterAction();
+
         if (_tester) _tester.UpdateResultText($"Player took {amount} damage. Current HP: {_currentHp}");
 
         if (_currentHp <= 0)

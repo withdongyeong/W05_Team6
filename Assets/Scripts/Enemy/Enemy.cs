@@ -81,7 +81,7 @@ public class Enemy : MonoBehaviour
 
         GameManager.Instance.Player.ChangePlayerEnergy(GlobalSettings.Instance.ChargeEnergyPerAction);
         // TODO: 준비 애니메이션 재생 위치
-        anim.SetInteger("Prepare", 1); // 이거 나중에 actionCount +1로 해야함.
+        anim.SetInteger("Prepare", _currentAction.index); // 이거 나중에 actionCount +1로 해야함.
 
     }
 
@@ -111,6 +111,7 @@ public class Enemy : MonoBehaviour
             _tester.UpdateResultText($"[Counter] Enemy action was countered!");
 
         // TODO: 파훼 애니메이션/이펙트 등
+        anim.SetInteger("Prepare", 0);
         anim.SetTrigger("Damaged");
     }
 
@@ -180,7 +181,7 @@ public class Enemy : MonoBehaviour
     public bool TakeDamage(float amount)
     {
         currentHp -= amount;
-        anim.SetTrigger("Damaged");
+        //anim.SetTrigger("Damaged");
         if (_tester) _tester.UpdateResultText($"Enemy took {amount} damage. Current HP: {currentHp}");
 
         if (currentHp <= 0)

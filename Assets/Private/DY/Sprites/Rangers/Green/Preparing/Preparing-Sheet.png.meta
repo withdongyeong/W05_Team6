@@ -119,10 +119,10 @@ TextureImporter:
       name: Preparing-Sheet_0
       rect:
         serializedVersion: 2
-        x: 161
-        y: 21
-        width: 686
-        height: 974
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: Preparing-Sheet_1
       rect:
         serializedVersion: 2
-        x: 1185
-        y: 21
-        width: 686
-        height: 974
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: db7cc1f0f7d82ca4cbebe30521f6b462
     internalID: 0
     vertices: []
     indices: 

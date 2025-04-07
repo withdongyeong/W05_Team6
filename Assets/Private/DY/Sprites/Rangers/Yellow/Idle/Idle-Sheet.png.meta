@@ -125,10 +125,10 @@ TextureImporter:
       name: Idle-Sheet_0
       rect:
         serializedVersion: 2
-        x: 113
-        y: 9
-        width: 728
-        height: 974
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Idle-Sheet_1
       rect:
         serializedVersion: 2
-        x: 1137
-        y: 9
-        width: 728
-        height: 974
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: Idle-Sheet_2
       rect:
         serializedVersion: 2
-        x: 2161
-        y: 9
-        width: 728
-        height: 986
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: Idle-Sheet_3
       rect:
         serializedVersion: 2
-        x: 3185
-        y: 9
-        width: 728
-        height: 974
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b6eb0aabd073e484d92c2f37c4a469fb
     internalID: 0
     vertices: []
     indices: 

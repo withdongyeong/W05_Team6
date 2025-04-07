@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7328559837667652286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883087965959266684}
+  - component: {fileID: 4840719992919388662}
+  - component: {fileID: 3823058575371541272}
+  m_Layer: 0
+  m_Name: UppercutSpline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &883087965959266684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328559837667652286}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.9, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4840719992919388662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328559837667652286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Spline:
+    m_EditModeType: 1
+    m_Knots: []
+    m_MetaData: []
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Splines:
+  - m_EditModeType: 1
+    m_Knots:
+    - Position:
+        x: 0
+        y: 0
+        z: 0
+      TangentIn:
+        x: 0
+        y: 0
+        z: -0.1406952
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.1406952
+      Rotation:
+        value:
+          x: -0.60150087
+          y: -0.37174812
+          z: 0.37174797
+          w: 0.60150105
+    - Position:
+        x: -1.2584162
+        y: 0.629208
+        z: 0
+      TangentIn:
+        x: 0
+        y: 0
+        z: -0.439537
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.4194704
+      Rotation:
+        value:
+          x: -0.64821595
+          y: -0.28251737
+          z: 0.28251734
+          w: 0.648216
+    - Position:
+        x: -2.13841
+        y: 1.730322
+        z: 0
+      TangentIn:
+        x: 0
+        y: 0
+        z: -0.40165257
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.35977885
+      Rotation:
+        value:
+          x: 0.69026417
+          y: 0.15341255
+          z: -0.1534125
+          w: -0.6902641
+    - Position:
+        x: -2.7
+        y: 3
+        z: 0
+      TangentIn:
+        x: 0
+        y: 0
+        z: -0.10281613
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.10281613
+      Rotation:
+        value:
+          x: -0.6970402
+          y: -0.11889054
+          z: 0.11889054
+          w: 0.69704014
+    m_MetaData:
+    - Mode: 3
+      Tension: 0.5
+    - Mode: 3
+      Tension: 0.5
+    - Mode: 3
+      Tension: 0.5
+    - Mode: 3
+      Tension: 0.5
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Knots:
+    m_KnotsLink: []
+--- !u!114 &3823058575371541272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328559837667652286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37ca200bce49ac4c9c050e3f05ad91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

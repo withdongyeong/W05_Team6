@@ -69,7 +69,7 @@
       "type" : "Attack",
       "damage" : 8,
       "castingTime" : 6,
-      "cameraIndex" : 0
+      "cameraIndex" : 5
     }
   ]
 }
