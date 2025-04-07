@@ -6,7 +6,8 @@ public class CameraTest : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B)) cameraController.StartBounce();
+        if (Input.GetKeyDown(KeyCode.B)) cameraController.StartBounceJap();
+        if (Input.GetKeyDown(KeyCode.K)) cameraController.StartBounceKick();
         if (Input.GetKeyDown(KeyCode.F)) cameraController.StartFall();
         if (Input.GetKeyDown(KeyCode.Z)) cameraController.StartZoomInOut();
         if (Input.GetKeyDown(KeyCode.X)) cameraController.StartZoomIn();
