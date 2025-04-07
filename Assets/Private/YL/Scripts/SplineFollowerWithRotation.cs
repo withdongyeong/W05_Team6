@@ -1,35 +1,84 @@
 ﻿using UnityEngine;
 using UnityEngine.Splines;
+using System.Collections;
 
 public class SplineFollowerWithRotation : MonoBehaviour
 {
-    public SplineContainer splineContainer;
-    public GameObject splineObjectWithRotation; // AttackSpline 오브젝트
-    public float duration = 1f; // 움직이는 데 걸리는 시간
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+    private Coroutine moveRoutine;
 
-    private float timer;
-    private ISplineRotation splineRotation;
-
-    void Start()
+    private void Start()
     {
-        if (splineObjectWithRotation != null)
-        {
-            splineRotation = splineObjectWithRotation.GetComponent<ISplineRotation>();
-        }
+        startPosition = transform.position;
+        startRotation = transform.rotation;
     }
 
-    void Update()
+    public void PlaySpline(string splineName)
     {
-        if (splineContainer == null || splineRotation == null) return;
+        if (moveRoutine != null)
+            StopCoroutine(moveRoutine);
 
-        timer += Time.deltaTime;
-        float t = Mathf.Clamp01(timer / duration); // 0 ~ 1
+        moveRoutine = StartCoroutine(MoveAlongSpline(splineName));
+    }
 
-        // Spline의 위치 계산
-        Vector3 position = splineContainer.EvaluatePosition(t);
-        transform.position = position;
+    private IEnumerator MoveAlongSpline(string splineName)
+    {
+        GameObject splineObj = FindObjectOfType<SplineManager>().GetSpline(splineName);
+        if (splineObj == null)
+        {
+            Debug.LogWarning($"[Follower] {splineName} 오브젝트 없음");
+            yield break;
+        }
 
-        // 회전 적용
+        var splineContainer = splineObj.GetComponent<SplineContainer>();
+        var splineRotation = splineObj.GetComponent<ISplineRotation>();
+
+        if (splineContainer == null || splineRotation == null)
+        {
+            Debug.LogWarning($"[Follower] {splineName}에 필요한 컴포넌트 없음");
+            yield break;
+        }
+
+        float moveDuration = 1f;
+        float timer = 0f;
+
+        while (timer < moveDuration)
+        {
+            float t = timer / moveDuration;
+
+            transform.position = splineContainer.EvaluatePosition(t);
+            transform.rotation = splineRotation.GetRotation();
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = splineContainer.EvaluatePosition(1f);
         transform.rotation = splineRotation.GetRotation();
+
+        yield return new WaitForSeconds(1f);
+
+        Vector3 endPosition = transform.position;
+        Quaternion endRotation = transform.rotation;
+
+        // 복귀
+        float returnDuration = 2f;
+        float returnTimer = 0f;
+
+        while (returnTimer < returnDuration)
+        {
+            float t = returnTimer / returnDuration;
+
+            transform.position = Vector3.Lerp(endPosition, startPosition, t);
+            transform.rotation = Quaternion.Slerp(endRotation, startRotation, t);
+
+            returnTimer += Time.deltaTime;
+            yield return null;
+        }
+
+        // 최종 정렬
+        transform.position = startPosition;
+        transform.rotation = startRotation;
     }
 }

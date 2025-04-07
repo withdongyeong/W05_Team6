@@ -216,6 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 169444193}
   - component: {fileID: 169444192}
+  - component: {fileID: 169444194}
   m_Layer: 0
   m_Name: GardRightSpline
   m_TagString: Untagged
@@ -318,6 +319,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &169444194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169444191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c60cdd70d7457e744bab662b4789913c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &220392862
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 220392864}
   - component: {fileID: 220392863}
+  - component: {fileID: 220392865}
   m_Layer: 0
   m_Name: JapSpline
   m_TagString: Untagged
@@ -430,6 +444,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &220392865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220392862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b47ff7a5a84abb488c0bc42adb2d752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &235240648
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 594223417}
   - component: {fileID: 594223416}
+  - component: {fileID: 594223418}
   m_Layer: 0
   m_Name: UppercutSpline
   m_TagString: Untagged
@@ -1106,6 +1133,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &594223418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594223415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37ca200bce49ac4c9c050e3f05ad91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &664074141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,6 +1329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1051784990}
   - component: {fileID: 1051784989}
+  - component: {fileID: 1051784991}
   m_Layer: 0
   m_Name: Kick Spline
   m_TagString: Untagged
@@ -1392,6 +1432,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051784991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051784988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cea6b9262ef4444ab594130e5016322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1168753597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,7 +1558,7 @@ Transform:
   m_GameObject: {fileID: 1192630326}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.56, y: 1.36, z: 0}
+  m_LocalPosition: {x: -4.93, y: -3.55, z: 0}
   m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1576,12 +1628,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1192630326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58d41f1e00a0704691df980fc51e5e3, type: 3}
+  m_Script: {fileID: 11500000, guid: f20b7b6938aa850459b0ab1cb569c779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splineContainer: {fileID: 1224097077}
-  speed: 2
-  isMoving: 1
+  splineContainer: {fileID: 2081123870}
+  splineObjectWithRotation: {fileID: 2081123869}
+  moveDuration: 1
 --- !u!1 &1224097076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1224097078}
   - component: {fileID: 1224097077}
+  - component: {fileID: 1224097079}
   m_Layer: 0
   m_Name: GardLeftSpline
   m_TagString: Untagged
@@ -1694,6 +1747,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1224097079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224097076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28aa5a5890a64ed45b861b9252de20d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1239268473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,7 +2497,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2042365469}
   - component: {fileID: 2042365471}
-  - component: {fileID: 2042365470}
   m_Layer: 6
   m_Name: RoboGH_0
   m_TagString: Untagged
@@ -2448,28 +2512,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042365468}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.54463905, y: 0.8386706, z: -0, w: 0}
-  m_LocalPosition: {x: 7.7, y: -2.11, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 5.18, y: -3.62, z: 0}
   m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1918372449}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -66}
---- !u!114 &2042365470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042365468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58d41f1e00a0704691df980fc51e5e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  splineContainer: {fileID: 1051784989}
-  speed: 2
-  isMoving: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &2042365471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2535,6 +2584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2081123871}
   - component: {fileID: 2081123870}
+  - component: {fileID: 2081123872}
   m_Layer: 0
   m_Name: AttackSpline
   m_TagString: Untagged
@@ -2657,6 +2707,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2081123872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081123869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854ab22af10f7924b8d91f2e087f44ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2092783413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2729,6 +2791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0929f8fd74b23c54c897bfc66aa3ea4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  registeredSplines: []
 --- !u!1 &2143949162
 GameObject:
   m_ObjectHideFlags: 0
