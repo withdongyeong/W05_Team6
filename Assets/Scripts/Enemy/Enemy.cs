@@ -123,6 +123,11 @@ public class Enemy : MonoBehaviour
     {
         if (isAlive && _currentAction != null)
         {
+            if (IsCounteredAfterExecute(_currentAction, GameManager.Instance.GetCurrentPlayerAction()))
+            {
+                EnterCounteredState();
+                return;
+            }
             anim.SetTrigger("Attack");
             GameManager.Instance.ReceiveEnemyAction(_currentAction);
             if (_currentAction.id == "Shout")
@@ -144,9 +149,6 @@ public class Enemy : MonoBehaviour
             return false;
 
         var action = player.action;
-
-<<<<<<< Updated upstream
-=======
         if (player.action.type != "Attack")
             return false;
         else
@@ -166,8 +168,6 @@ public class Enemy : MonoBehaviour
 
         if (enemyAction.counteredBy.Exists(c => (c.id == action.id)))
             GameManager.Instance.Countered();
-     
->>>>>>> Stashed changes
         return enemyAction.counteredBy.Exists(c => (c.id == action.id));
     }
 
