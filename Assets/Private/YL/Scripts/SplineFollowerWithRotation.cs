@@ -57,7 +57,14 @@ public class SplineFollowerWithRotation : MonoBehaviour
         transform.position = splineContainer.EvaluatePosition(1f);
         transform.rotation = splineRotation.GetRotation();
 
-        yield return new WaitForSeconds(1f);
+        float waitDuration = 1f;
+
+        if (splineName == "GardLeftSpline" || splineName == "GardRightSpline")
+        {
+            waitDuration = 5f; // 혹은 원하는 시간으로 설정
+        }
+
+        yield return new WaitForSeconds(waitDuration);
 
         Vector3 endPosition = transform.position;
         Quaternion endRotation = transform.rotation;
