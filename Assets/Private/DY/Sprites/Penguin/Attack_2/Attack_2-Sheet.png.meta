@@ -118,10 +118,10 @@ TextureImporter:
       name: Attack_2-Sheet_0
       rect:
         serializedVersion: 2
-        x: 91
-        y: 43
-        width: 330
-        height: 426
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: Attack_2-Sheet_1
       rect:
         serializedVersion: 2
-        x: 591
-        y: 43
-        width: 383
-        height: 426
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Attack_2-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1049
-        y: 43
-        width: 430
-        height: 434
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: Attack_2-Sheet_3
       rect:
         serializedVersion: 2
-        x: 1549
-        y: 43
-        width: 452
-        height: 434
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: Attack_2-Sheet_4
       rect:
         serializedVersion: 2
-        x: 2049
-        y: 43
-        width: 429
-        height: 434
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: Attack_2-Sheet_5
       rect:
         serializedVersion: 2
-        x: 2544
-        y: 43
-        width: 330
-        height: 434
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 71484c31338453c41955f8e26215760c
     internalID: 0
     vertices: []
     indices: 
