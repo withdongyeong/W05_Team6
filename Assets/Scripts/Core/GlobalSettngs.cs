@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,7 +48,7 @@ public class GlobalSettings : MonoBehaviour
     public int ChargeEnergyPerAction => _chargeEnergyPerAction;
 
     public List<string> AttackBeforeShout => _attackBeforeShout;
-    
+
     void Awake()
     {
         if (Instance != null && Instance != this)
