@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class GameManager : MonoBehaviour
 {
@@ -235,7 +236,18 @@ public class GameManager : MonoBehaviour
             _tester.UpdatePlayerText($"{text}");
         }
 
+        StopCoroutine(AfterPlayerAction());
+        StartCoroutine(AfterPlayerAction());
         ResolvePlayerAction(resolved);
+    }
+
+    IEnumerator AfterPlayerAction()
+    {
+        yield return new WaitForSeconds(4f);
+        if (_tester)
+        {
+            _tester.UpdatePlayerText("준비 중");
+        }
     }
 
     public void ReceiveEnemyAction(EnemyActionData action)
