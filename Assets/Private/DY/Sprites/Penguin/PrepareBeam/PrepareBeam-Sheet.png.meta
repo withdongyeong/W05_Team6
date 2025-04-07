@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PrepareBeam-Sheet_0: -737530889708269491
+      PrepareBeam-Sheet_1: 865489115229376743
+      PrepareBeam-Sheet_2: -1838584529857036926
+      PrepareBeam-Sheet_3: 7594135944111757300
+      PrepareBeam-Sheet_4: 8720563320117592807
+      PrepareBeam-Sheet_5: -1169158178232395603
+      PrepareBeam-Sheet_6: -7491635636148807869
+      PrepareBeam-Sheet_7: 4264355543838155363
+      PrepareBeam-Sheet_8: 6929552059905655657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

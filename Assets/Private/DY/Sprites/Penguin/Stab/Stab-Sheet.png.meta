@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stab-Sheet_0: -4670918269028243705
+      Stab-Sheet_1: -9154250887528264226
+      Stab-Sheet_2: 1901610895608171052
+      Stab-Sheet_3: -6787005450618820407
+      Stab-Sheet_4: -3504071232368693432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

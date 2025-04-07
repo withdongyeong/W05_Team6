@@ -509,7 +509,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Howling-Sheet_0: 6582898900974893813
+      Howling-Sheet_1: -4147839390759721663
+      Howling-Sheet_10: -7811703816108332640
+      Howling-Sheet_11: 435200166786244240
+      Howling-Sheet_12: 4496142121370071362
+      Howling-Sheet_13: -9164015445650123162
+      Howling-Sheet_14: -4562800306544509972
+      Howling-Sheet_15: -6380529141380183942
+      Howling-Sheet_2: -2438943224664969636
+      Howling-Sheet_3: -8657286955445649567
+      Howling-Sheet_4: 4701192819383249654
+      Howling-Sheet_5: 3047144667328855533
+      Howling-Sheet_6: -7898051192445413051
+      Howling-Sheet_7: 6442917759012198866
+      Howling-Sheet_8: -2344215831535764434
+      Howling-Sheet_9: -6143284658720903071
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
