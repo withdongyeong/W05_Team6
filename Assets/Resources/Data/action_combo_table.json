@@ -7,7 +7,7 @@
       ],
       "result": "Jab",
       "type" : "Attack",
-      "damage" : 2,
+      "damage" : 3,
       "castingTime" : 2,
       "cameraIndex" : 0
     },

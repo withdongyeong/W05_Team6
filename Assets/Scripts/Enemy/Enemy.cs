@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public enum EnemyActionState { Idle, Preparing, Countered, Executing }
     private EnemyActionState _state = EnemyActionState.Idle;
     private EnemyActionData _currentAction;
+    private string _beforeAction;
     private float _prepareStartTime;
     private float _nextActionTime;
     private float _counteredTime;
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour
         _tester = FindAnyObjectByType<Tester>();
         _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
         anim = GetComponent<Animator>();
+        _beforeAction = "a";
     }
 
     void Update()
@@ -58,18 +60,25 @@ public class Enemy : MonoBehaviour
 
     void StartPreparingAction()
     {
-        //행동 정하는 if문.
-        if(!isShouted)
+        do
         {
-            if (currentHp > GlobalSettings.Instance.EnemyMaxHp / 2f)
-                _currentAction = actionsBeforeShout[Random.Range(0, actionsBeforeShout.Count)];
+            //행동 정하는 if문.
+            if (!isShouted)
+            {
+                if (currentHp > GlobalSettings.Instance.EnemyMaxHp / 2f)
+                    _currentAction = actionsBeforeShout[Random.Range(0, actionsBeforeShout.Count)];
+                else
+                    _currentAction = actions.Find(a => a.id == "Shout");//체력 반절 이하면 포효
+            }
             else
-                _currentAction = actions.Find(a => a.id == "Shout");//체력 반절 이하면 포효
-        }
-        else
-            _currentAction = actions[Random.Range(0, actions.Count)];//포효 빼야되는데 귀찮아요..
+                do
+                {
+                    _currentAction = actions[Random.Range(0, actions.Count)];
+                } while (_currentAction.id == "Shout");
+        } while (_currentAction.id == _beforeAction);
         _prepareStartTime = Time.time;
         _state = EnemyActionState.Preparing;
+        _beforeAction = _currentAction.id;
 
         if (_tester)
         {
@@ -94,7 +103,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        if (Time.time >= _prepareStartTime + GlobalSettings.Instance.EnemyPrepareTime)
+        if (Time.time >= _prepareStartTime + _currentAction.castingTime)
         {
             _state = EnemyActionState.Executing;
             ExecuteCurrentAction();
@@ -112,7 +121,6 @@ public class Enemy : MonoBehaviour
 
         // TODO: 파훼 애니메이션/이펙트 등
         anim.SetInteger("Prepare", 0);
-        anim.SetTrigger("Damaged");
     }
 
     void UpdateCounteredState()
@@ -130,12 +138,12 @@ public class Enemy : MonoBehaviour
     {
         if (isAlive && _currentAction != null)
         {
+            anim.SetTrigger("Attack");
             if (IsCounteredAfterExecute(_currentAction, GameManager.Instance.GetCurrentPlayerAction()))
             {
                 EnterCounteredState();
                 return;
-            }
-            anim.SetTrigger("Attack");
+            }  
             GameManager.Instance.ReceiveEnemyAction(_currentAction);
             if (_currentAction.id == "Shout")
                 isShouted = true;
@@ -181,7 +189,7 @@ public class Enemy : MonoBehaviour
     public bool TakeDamage(float amount)
     {
         currentHp -= amount;
-        //anim.SetTrigger("Damaged");
+        anim.SetTrigger("Damaged");
         if (_tester) _tester.UpdateResultText($"Enemy took {amount} damage. Current HP: {currentHp}");
 
         if (currentHp <= 0)

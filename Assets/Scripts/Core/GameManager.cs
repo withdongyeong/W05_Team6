@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class GameManager : MonoBehaviour
 {
@@ -235,7 +236,18 @@ public class GameManager : MonoBehaviour
             _tester.UpdatePlayerText($"{text}");
         }
 
+        StopCoroutine(AfterPlayerAction());
+        StartCoroutine(AfterPlayerAction());
         ResolvePlayerAction(resolved);
+    }
+
+    IEnumerator AfterPlayerAction()
+    {
+        yield return new WaitForSeconds(4f);
+        if (_tester)
+        {
+            _tester.UpdatePlayerText("준비 중");
+        }
     }
 
     public void ReceiveEnemyAction(EnemyActionData action)
@@ -286,20 +298,8 @@ public class GameManager : MonoBehaviour
     {
         if (action.type == "Attack")
         {
-            bool playerBlocked = _playerAction != null &&
-                                 _playerAction.action.type == "Defense" &&
-                                 _playerAction.occurTime <= _enemyOccurTime &&
-                                 _enemyOccurTime <= _playerAction.endTime;
-
-            if (playerBlocked)
-            {
-                _tester.UpdateResultText($"[Enemy] {action.id} 공격 → [Player] 방어 성공");
-            }
-            else
-            {
-                bool isAlive = _player.TakeDamage(GlobalSettings.Instance.EnemyAttackDamage);
-                _tester.UpdateResultText($"[Enemy] {action.id} 공격 → [Player] 피해 {(isAlive ? "입음" : "사망")}");
-            }
+            bool isAlive = _player.TakeDamage(action.damage);
+            _tester.UpdateResultText($"[Enemy] {action.id} 공격 → [Player] 피해 {(isAlive ? "입음" : "사망")}");
         }
     }
 
@@ -330,5 +330,6 @@ public class GameManager : MonoBehaviour
     public void GameEnd(bool isClear)
     {
         UIManager.Instance.SetGameEndPanel(isClear);
+        Time.timeScale = 0;
     }
 }
