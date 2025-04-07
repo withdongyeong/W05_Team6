@@ -94,7 +94,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        if (Time.time >= _prepareStartTime + GlobalSettings.Instance.EnemyPrepareTime)
+        if (Time.time >= _prepareStartTime + _currentAction.castingTime)
         {
             _state = EnemyActionState.Executing;
             ExecuteCurrentAction();
@@ -112,7 +112,6 @@ public class Enemy : MonoBehaviour
 
         // TODO: 파훼 애니메이션/이펙트 등
         anim.SetInteger("Prepare", 0);
-        anim.SetTrigger("Damaged");
     }
 
     void UpdateCounteredState()
@@ -130,12 +129,12 @@ public class Enemy : MonoBehaviour
     {
         if (isAlive && _currentAction != null)
         {
+            anim.SetTrigger("Attack");
             if (IsCounteredAfterExecute(_currentAction, GameManager.Instance.GetCurrentPlayerAction()))
             {
                 EnterCounteredState();
                 return;
-            }
-            anim.SetTrigger("Attack");
+            }  
             GameManager.Instance.ReceiveEnemyAction(_currentAction);
             if (_currentAction.id == "Shout")
                 isShouted = true;

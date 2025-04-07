@@ -22,7 +22,6 @@ public class GlobalSettings : MonoBehaviour
 
     [Header("Enemy Settings")]
     private float _enemyMaxHp = 6f;
-    private float _enemyAttackDamage = 10f;
     private float _enemyActionInterval = 3f;
     private float _playerPrepareTime = 1f;
     private float _enemyPrepareTime = 20f;
@@ -36,7 +35,6 @@ public class GlobalSettings : MonoBehaviour
     public float EnemyPrepareTime => _enemyPrepareTime;
     public float DefenseBufferTime => _defenseBufferTime;
     public float PlayerDamage => _playerDamage;
-    public float EnemyAttackDamage => _enemyAttackDamage;
     public float PlayerHpMax => _playerHpMax;
     public float ComboCheckDuration => _comboCheckDuration;
     public float AttackCheckDuration => _attackCheckDuration;

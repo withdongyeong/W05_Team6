@@ -17,6 +17,7 @@ public class EnemyActionData
     public string type;
     public int index;
     public float castingTime;
+    public float damage;
     public List<CounterInfo> counteredBy;
 }
 

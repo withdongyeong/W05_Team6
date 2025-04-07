@@ -23,6 +23,7 @@ public class ShatterEffect : MonoBehaviour
 
     IEnumerator ShatterEffectCoroutine()
     {
+        yield return new WaitForSeconds(0.7f);
         Color color = rawimage.color;
         color.a = 1f;
         rawimage.color = color;
