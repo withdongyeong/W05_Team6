@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Rendering.VirtualTexturing;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class Enemy : MonoBehaviour
     private float _nextActionTime;
     private float _counteredTime;
     private Animator anim;
+
+    public Action<float> timeFlowed;
 
     [Header("Getter")]
     public EnemyActionState CurrentState => _state;
@@ -68,14 +71,14 @@ public class Enemy : MonoBehaviour
             if (!isShouted)
             {
                 if (currentHp > GlobalSettings.Instance.EnemyMaxHp / 2f)
-                    _currentAction = actionsBeforeShout[Random.Range(0, actionsBeforeShout.Count)];
+                    _currentAction = actionsBeforeShout[UnityEngine.Random.Range(0, actionsBeforeShout.Count)];
                 else
                     _currentAction = actions.Find(a => a.id == "Shout");//체력 반절 이하면 포효
             }
             else
                 do
                 {
-                    _currentAction = actions[Random.Range(0, actions.Count)];
+                    _currentAction = actions[UnityEngine.Random.Range(0, actions.Count)];
                 } while (_currentAction.id == "Shout");
         } while (_currentAction.id == _beforeAction);
         _prepareStartTime = Time.time;
@@ -93,10 +96,10 @@ public class Enemy : MonoBehaviour
                 if (KoreanMapping.PlayerSkill.TryGetValue(counterInfos[i].id, out string infoText))
                 {
                     Debug.Log(infoText);
-                    counterText += (infoText + "\n");
+                    counterText += ("   " +infoText + "\n");
                 }
             }
-            fullText = $"적 {text}\n준비 중 \n \n추천 행동 : \n " + counterText;
+            fullText = $"적 {text}\n준비 중 \n \n추천 행동 : \n" + counterText;
             textLength = 0;
             TypeFullText();
         }
@@ -111,12 +114,12 @@ public class Enemy : MonoBehaviour
     void MonitorForCounter()
     {
         var playerAction = GameManager.Instance.GetCurrentPlayerAction();
+        timeFlowed((_prepareStartTime + _currentAction.castingTime) - Time.time);
         if (IsCounteredAfterPrepare(_currentAction, playerAction))
         {
             EnterCounteredState();
             return;
         }
-
         if (Time.time >= _prepareStartTime + _currentAction.castingTime)
         {
             _state = EnemyActionState.Executing;

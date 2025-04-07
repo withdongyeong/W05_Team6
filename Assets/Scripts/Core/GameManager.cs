@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     private ActionComboDataList _comboData;
     private Enemy _enemy;
+    public Enemy Enemy { get { return _enemy; } }
     public Player Player { get { return _player; } }
     private Player _player;
     private Tester _tester;
