@@ -1631,9 +1631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20b7b6938aa850459b0ab1cb569c779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splineContainer: {fileID: 2081123870}
-  splineObjectWithRotation: {fileID: 2081123869}
-  moveDuration: 1
 --- !u!1 &1224097076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,6 +2494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042365469}
   - component: {fileID: 2042365471}
+  - component: {fileID: 2042365472}
   m_Layer: 6
   m_Name: RoboGH_0
   m_TagString: Untagged
@@ -2574,6 +2572,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2042365472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042365468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20b7b6938aa850459b0ab1cb569c779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2081123869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2731,6 +2741,7 @@ GameObject:
   - component: {fileID: 2092783414}
   - component: {fileID: 2092783416}
   - component: {fileID: 2092783417}
+  - component: {fileID: 2092783418}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2792,6 +2803,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   registeredSplines: []
+--- !u!114 &2092783418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092783413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f1f14198a21b74aa9bef9713671615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followerBH: {fileID: 1192630329}
+  followerGH: {fileID: 2042365472}
 --- !u!1 &2143949162
 GameObject:
   m_ObjectHideFlags: 0
