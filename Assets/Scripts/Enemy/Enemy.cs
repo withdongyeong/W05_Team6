@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public enum EnemyActionState { Idle, Preparing, Countered, Executing }
     private EnemyActionState _state = EnemyActionState.Idle;
     private EnemyActionData _currentAction;
+    private EnemyActionData _beforeAction;
     private float _prepareStartTime;
     private float _nextActionTime;
     private float _counteredTime;
@@ -59,7 +60,7 @@ public class Enemy : MonoBehaviour
     void StartPreparingAction()
     {
         //행동 정하는 if문.
-        if(!isShouted)
+        if (!isShouted)
         {
             if (currentHp > GlobalSettings.Instance.EnemyMaxHp / 2f)
                 _currentAction = actionsBeforeShout[Random.Range(0, actionsBeforeShout.Count)];
@@ -67,7 +68,10 @@ public class Enemy : MonoBehaviour
                 _currentAction = actions.Find(a => a.id == "Shout");//체력 반절 이하면 포효
         }
         else
-            _currentAction = actions[Random.Range(0, actions.Count)];//포효 빼야되는데 귀찮아요..
+            do
+            {
+                _currentAction = actions[Random.Range(0, actions.Count)];//포효 빼야되는데 귀찮아요..
+            } while (_currentAction.id == "Shout");
         _prepareStartTime = Time.time;
         _state = EnemyActionState.Preparing;
 
@@ -180,7 +184,7 @@ public class Enemy : MonoBehaviour
     public bool TakeDamage(float amount)
     {
         currentHp -= amount;
-        //anim.SetTrigger("Damaged");
+        anim.SetTrigger("Damaged");
         if (_tester) _tester.UpdateResultText($"Enemy took {amount} damage. Current HP: {currentHp}");
 
         if (currentHp <= 0)

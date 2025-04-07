@@ -1771,7 +1771,7 @@ GameObject:
   - component: {fileID: 932348363}
   - component: {fileID: 932348362}
   - component: {fileID: 932348361}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: ForEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1839,7 +1839,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &932348364
 RectTransform:
@@ -2248,7 +2248,7 @@ GameObject:
   - component: {fileID: 1190312779}
   - component: {fileID: 1190312778}
   - component: {fileID: 1190312780}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Shatter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2271,8 +2271,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -80, y: -80}
+  m_AnchoredPosition: {x: 0, y: 225}
+  m_SizeDelta: {x: -800, y: -550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1190312778
 MonoBehaviour:

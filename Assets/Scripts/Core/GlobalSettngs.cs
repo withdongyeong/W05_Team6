@@ -21,7 +21,7 @@ public class GlobalSettings : MonoBehaviour
     private float _shatterEffectDuration = 3f;
 
     [Header("Enemy Settings")]
-    private float _enemyMaxHp = 6f;
+    private float _enemyMaxHp = 50f;
     private float _enemyActionInterval = 3f;
     private float _playerPrepareTime = 1f;
     private float _enemyPrepareTime = 20f;
