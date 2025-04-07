@@ -577,6 +577,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 663498319374879345, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1997440428955980247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: pilotId
       value: 2
@@ -608,6 +612,10 @@ PrefabInstance:
     - target: {fileID: 3783388435285116247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_Offset.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783388435285116247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4137509328888020346, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_FlipX
@@ -1151,13 +1159,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4225199062911855357, guid: 957fd7eb12c267446a31012151d7ff7f, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 183
+      objectReference: {fileID: 0}
     - target: {fileID: 6241508809717202823, guid: 957fd7eb12c267446a31012151d7ff7f, type: 3}
       propertyPath: m_Name
       value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 8596017635846410909, guid: 957fd7eb12c267446a31012151d7ff7f, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 55
+      value: 183
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2353,6 +2365,10 @@ PrefabInstance:
       propertyPath: m_text
       value: "\uB4A4\uB85C"
       objectReference: {fileID: 0}
+    - target: {fileID: 663498319374879345, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1459318991798524504, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: actionId
       value: Forward
@@ -2384,6 +2400,10 @@ PrefabInstance:
     - target: {fileID: 3783388435285116247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_Offset.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783388435285116247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4247700587392731698, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_LocalScale.x
@@ -2647,7 +2667,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87338b69c6ba5f243987639f809325a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Customcursor: {fileID: 2800000, guid: 458e64d956ff3a049aa1456bb61fa5fc, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 458e64d956ff3a049aa1456bb61fa5fc, type: 3}
+  pilotCursor: {fileID: 2800000, guid: 8c63b23826539804c80074f6585c142f, type: 3}
+  defaultHotspot: {x: 280, y: 130}
+  pilotHotspot: {x: 0, y: 0}
+  pilotLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &1320546590
 Transform:
   m_ObjectHideFlags: 0
@@ -3107,6 +3133,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 663498319374879345, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1459318991798524504, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: actionId
       value: Forward
@@ -3150,6 +3180,10 @@ PrefabInstance:
     - target: {fileID: 3783388435285116247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783388435285116247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3783388435285116247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -3889,6 +3923,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 918675796817378089, guid: 8284237f6c99d7140ad4413c30b3f5b9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472407366787264532, guid: 8284237f6c99d7140ad4413c30b3f5b9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1697554224535250481, guid: 8284237f6c99d7140ad4413c30b3f5b9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4060,6 +4102,14 @@ PrefabInstance:
     - target: {fileID: 4841235317793773428, guid: 8284237f6c99d7140ad4413c30b3f5b9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981006614305331199, guid: 8284237f6c99d7140ad4413c30b3f5b9, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247569628524696480, guid: 8284237f6c99d7140ad4413c30b3f5b9, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6414320287549293511, guid: 8284237f6c99d7140ad4413c30b3f5b9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4238,6 +4288,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 451282022}
     m_Modifications:
+    - target: {fileID: 663498319374879345, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 886151562575128845, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4277,6 +4331,10 @@ PrefabInstance:
     - target: {fileID: 3783388435285116247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_Offset.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783388435285116247, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4137509328888020346, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_Color.a
