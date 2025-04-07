@@ -71,6 +71,9 @@ public class Tester : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha6)) CancelAction(2);
         if (Input.GetKeyDown(KeyCode.Alpha7)) CancelAction(3);
         if (Input.GetKeyDown(KeyCode.Alpha8)) CancelAction(4);
+
+        // 게임 승리
+        if (Input.GetKeyDown(KeyCode.V)) GameManager.Instance.GameEnd(true);
     }
     void UpdatePilotStates()
     {

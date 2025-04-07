@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         if (_currentHp <= 0)
         {
             if (_tester) _tester.UpdateResultText("PLAYER DEFEATED");
+            GameManager.Instance.GameEnd(isClear: false);
             return false;
         }
 

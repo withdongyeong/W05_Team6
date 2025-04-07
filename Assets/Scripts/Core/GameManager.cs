@@ -317,4 +317,8 @@ public class GameManager : MonoBehaviour
         startZoomInOut += _mainCamera.StartZoomInOut;
     }
 
+    public void GameEnd(bool isClear)
+    {
+        UIManager.Instance.SetGameEndPanel(isClear);
+    }
 }

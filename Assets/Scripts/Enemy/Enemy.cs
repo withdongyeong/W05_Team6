@@ -182,6 +182,8 @@ public class Enemy : MonoBehaviour
             isAlive = false;
             if (_tester) _tester.UpdateResultText($"{enemyId} Defeated!");
             anim.SetTrigger("Dead");
+            GameManager.Instance.GameEnd(isClear: true);
+
             return false;
         }
         return true;

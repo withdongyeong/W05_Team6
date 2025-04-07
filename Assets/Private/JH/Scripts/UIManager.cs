@@ -8,8 +8,10 @@ public class UIManager : MonoBehaviour
     public GameObject AttackManualScreen;
     public GameObject DefenseManualScreen;
 
+    public UI_GameEnd GameEndUI;
     public GameObject EnergyUI;
     public TextMeshProUGUI StatusUI;
+
     public static UIManager Instance;
     public Action OnResetUI;
     public Action OnDisableUI;
@@ -68,5 +70,10 @@ public class UIManager : MonoBehaviour
         DefaultScreen.SetActive(false);
         DefenseManualScreen.SetActive(true);
         AttackManualScreen.SetActive(false);
+    }
+
+    public void SetGameEndPanel(bool isClear)
+    {
+        GameEndUI.ShowGameEndUI(isClear);
     }
 }
