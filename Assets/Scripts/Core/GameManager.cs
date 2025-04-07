@@ -330,5 +330,6 @@ public class GameManager : MonoBehaviour
     public void GameEnd(bool isClear)
     {
         UIManager.Instance.SetGameEndPanel(isClear);
+        Time.timeScale = 0;
     }
 }

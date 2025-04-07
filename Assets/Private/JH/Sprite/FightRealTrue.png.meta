@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FightRealTrue_0: 6137697051420254216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
