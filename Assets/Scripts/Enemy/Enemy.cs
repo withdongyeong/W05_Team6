@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     private float currentHp;
     private bool isAlive = true;
     private Tester _tester;
+    private string fullText;//에너미 대응행동 탁탁탁탁 치는거
+    private int textLength = 0;//지금 몇글자 쳤는지
 
     public enum EnemyActionState { Idle, Preparing, Countered, Executing }
     private EnemyActionState _state = EnemyActionState.Idle;
@@ -84,7 +86,19 @@ public class Enemy : MonoBehaviour
         {
             string text;
             if (!KoreanMapping.EnemySkill.TryGetValue(_currentAction.id, out text)) text = _currentAction.id;
-            _tester.UpdateEnemyText($"적 {text}\n준비 중");
+            List<CounterInfo> counterInfos = _currentAction.counteredBy;
+            string counterText ="";
+            for(int i = 0; i<counterInfos.Count; i++)
+            {
+                if (KoreanMapping.PlayerSkill.TryGetValue(counterInfos[i].id, out string infoText))
+                {
+                    Debug.Log(infoText);
+                    counterText += (infoText + "\n");
+                }          
+            }
+            fullText = $"적 {text}\n준비 중 \n \n추천 행동 : \n " + counterText;
+            textLength = 0;
+            TypeFullText();
         }
 
 
@@ -202,5 +216,13 @@ public class Enemy : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    private void TypeFullText()
+    {
+        textLength++;
+        _tester.enemyText.text = fullText.Substring(0, textLength);
+        if (textLength < fullText.Length)
+            Invoke("TypeFullText", GlobalSettings.Instance.TypeDelay);
     }
 }
