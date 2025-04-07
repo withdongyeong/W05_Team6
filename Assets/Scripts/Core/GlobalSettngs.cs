@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class GlobalSettings : MonoBehaviour
     private int _chargeEnergyPerAction = 4;
 
     [Header("Enemy Settings")]
-    private float _enemyMaxHp = 60f;
+    private float _enemyMaxHp = 6f;
     private float _enemyAttackDamage = 10f;
     private float _enemyActionInterval = 3f;
     private float _playerPrepareTime = 1f;
@@ -47,7 +48,7 @@ public class GlobalSettings : MonoBehaviour
     public int ChargeEnergyPerAction => _chargeEnergyPerAction;
 
     public List<string> AttackBeforeShout => _attackBeforeShout;
-    
+
     void Awake()
     {
         if (Instance != null && Instance != this)
