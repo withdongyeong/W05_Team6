@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     public UI_GameEnd GameEndUI;
     public GameObject EnergyUI;
-    public TextMeshProUGUI StatusUI;
+    //public TextMeshProUGUI StatusUI;
 
     public static UIManager Instance;
     public Action OnResetUI;
@@ -46,10 +46,10 @@ public class UIManager : MonoBehaviour
         _energyBar.UpdateEnergyBarUI(currentEnergy);
     }
 
-    public void UpdateStatusUI(string message)
-    {
-        StatusUI.text = message;
-    }
+    //public void UpdateStatusUI(string message)
+    //{
+    //    StatusUI.text = message;
+    //}
 
     private void SetDefaultScreen()
     {

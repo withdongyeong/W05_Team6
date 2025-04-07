@@ -228,7 +228,6 @@ public class GameManager : MonoBehaviour
 
         if (_tester)
             _tester.UpdatePlayerText($"Player Action Executed: Pilot{resolved.pilot}_{resolved.action.id} [{resolved.action.type}]");
-        UIManager.Instance.UpdateStatusUI(resolved.action.id);
 
         ResolvePlayerAction(resolved);
     }
