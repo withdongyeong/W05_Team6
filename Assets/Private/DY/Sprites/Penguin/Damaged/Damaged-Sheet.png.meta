@@ -131,10 +131,10 @@ TextureImporter:
       name: Damaged-Sheet_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 43
-        width: 330
-        height: 426
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Damaged-Sheet_1
       rect:
         serializedVersion: 2
-        x: 542
-        y: 89
-        width: 395
-        height: 380
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Damaged-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1042
-        y: 89
-        width: 395
-        height: 380
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Damaged-Sheet_3
       rect:
         serializedVersion: 2
-        x: 1542
-        y: 89
-        width: 395
-        height: 380
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: Damaged-Sheet_4
       rect:
         serializedVersion: 2
-        x: 2042
-        y: 89
-        width: 395
-        height: 380
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Damaged-Sheet_5
       rect:
         serializedVersion: 2
-        x: 2579
-        y: 43
-        width: 330
-        height: 426
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a8ae4bc23a6d4194b9aaa2ef6d6d0887
     internalID: 0
     vertices: []
     indices: 

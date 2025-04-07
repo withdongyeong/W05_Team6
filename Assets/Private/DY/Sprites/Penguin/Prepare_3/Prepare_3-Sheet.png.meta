@@ -115,10 +115,10 @@ TextureImporter:
       name: Prepare_3-Sheet_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 43
-        width: 330
-        height: 426
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,10 +137,10 @@ TextureImporter:
       name: Prepare_3-Sheet_1
       rect:
         serializedVersion: 2
-        x: 526
-        y: 43
-        width: 435
-        height: 426
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +159,10 @@ TextureImporter:
       name: Prepare_3-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1021
-        y: 43
-        width: 430
-        height: 434
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: Prepare_3-Sheet_3
       rect:
         serializedVersion: 2
-        x: 1521
-        y: 43
-        width: 430
-        height: 434
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: Prepare_3-Sheet_4
       rect:
         serializedVersion: 2
-        x: 2026
-        y: 43
-        width: 435
-        height: 426
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d0de68e404c26ef44994ef6453d6589e
     internalID: 0
     vertices: []
     indices: 
