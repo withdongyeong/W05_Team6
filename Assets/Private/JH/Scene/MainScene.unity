@@ -4658,8 +4658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e78a5523c82d694d8a5209116ebc7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameClearSprite: {fileID: 6137697051420254216, guid: 12ce7a69ce40dce42a2721f8edbd4a94, type: 3}
-  GameOverSprite: {fileID: -8048513154784661654, guid: 371b45282fc976e42ae0de9cf5015bb4, type: 3}
+  GameClearSprite: {fileID: 3302273018506617863, guid: 72fc86478c3eb8e45af88c8a29782ed2, type: 3}
+  GameOverSprite: {fileID: 803810758525862929, guid: 9ada1d650fdd7f641bd880cef7ddca14, type: 3}
 --- !u!1 &1918372448
 GameObject:
   m_ObjectHideFlags: 0
