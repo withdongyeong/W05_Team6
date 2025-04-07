@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Rendering.VirtualTexturing;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Enemy : MonoBehaviour
     private float currentHp;
     private bool isAlive = true;
     private Tester _tester;
+    private string fullText;//에너미 대응행동 탁탁탁탁 치는거
+    private int textLength = 0;//지금 몇글자 쳤는지
 
     public enum EnemyActionState { Idle, Preparing, Countered, Executing }
     private EnemyActionState _state = EnemyActionState.Idle;
@@ -22,7 +25,9 @@ public class Enemy : MonoBehaviour
     private float _nextActionTime;
     private float _counteredTime;
     private Animator anim;
-    
+
+    public Action<float> timeFlowed;
+
     [Header("Getter")]
     public EnemyActionState CurrentState => _state;
 
@@ -30,7 +35,7 @@ public class Enemy : MonoBehaviour
     {
         currentHp = GlobalSettings.Instance.EnemyMaxHp;
         actions = DataLoader.LoadEnemyActions().enemyActions.FindAll(a => a.enemyId == enemyId);
-        actionsBeforeShout = actions.FindAll(a=>GlobalSettings.Instance.AttackBeforeShout.Exists(id => id == a.id));
+        actionsBeforeShout = actions.FindAll(a => GlobalSettings.Instance.AttackBeforeShout.Exists(id => id == a.id));
         _tester = FindAnyObjectByType<Tester>();
         _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
         anim = GetComponent<Animator>();
@@ -66,14 +71,14 @@ public class Enemy : MonoBehaviour
             if (!isShouted)
             {
                 if (currentHp > GlobalSettings.Instance.EnemyMaxHp / 2f)
-                    _currentAction = actionsBeforeShout[Random.Range(0, actionsBeforeShout.Count)];
+                    _currentAction = actionsBeforeShout[UnityEngine.Random.Range(0, actionsBeforeShout.Count)];
                 else
                     _currentAction = actions.Find(a => a.id == "Shout");//체력 반절 이하면 포효
             }
             else
                 do
                 {
-                    _currentAction = actions[Random.Range(0, actions.Count)];
+                    _currentAction = actions[UnityEngine.Random.Range(0, actions.Count)];
                 } while (_currentAction.id == "Shout");
         } while (_currentAction.id == _beforeAction);
         _prepareStartTime = Time.time;
@@ -84,7 +89,19 @@ public class Enemy : MonoBehaviour
         {
             string text;
             if (!KoreanMapping.EnemySkill.TryGetValue(_currentAction.id, out text)) text = _currentAction.id;
-            _tester.UpdateEnemyText($"적 {text}\n준비 중");
+            List<CounterInfo> counterInfos = _currentAction.counteredBy;
+            string counterText = "";
+            for (int i = 0; i < counterInfos.Count; i++)
+            {
+                if (KoreanMapping.PlayerSkill.TryGetValue(counterInfos[i].id, out string infoText))
+                {
+                    Debug.Log(infoText);
+                    counterText += ("   " +infoText + "\n");
+                }
+            }
+            fullText = $"적 {text}\n준비 중 \n \n추천 행동 : \n" + counterText;
+            textLength = 0;
+            TypeFullText();
         }
 
 
@@ -97,12 +114,12 @@ public class Enemy : MonoBehaviour
     void MonitorForCounter()
     {
         var playerAction = GameManager.Instance.GetCurrentPlayerAction();
+        timeFlowed((_prepareStartTime + _currentAction.castingTime) - Time.time);
         if (IsCounteredAfterPrepare(_currentAction, playerAction))
         {
             EnterCounteredState();
             return;
         }
-
         if (Time.time >= _prepareStartTime + _currentAction.castingTime)
         {
             _state = EnemyActionState.Executing;
@@ -143,7 +160,7 @@ public class Enemy : MonoBehaviour
             {
                 EnterCounteredState();
                 return;
-            }  
+            }
             GameManager.Instance.ReceiveEnemyAction(_currentAction);
             if (_currentAction.id == "Shout")
                 isShouted = true;
@@ -203,4 +220,18 @@ public class Enemy : MonoBehaviour
         }
         return true;
     }
+
+    private void TypeFullText()
+    {
+        textLength++;
+        _tester.enemyText.text = fullText.Substring(0, textLength);
+        if (textLength < fullText.Length)
+            Invoke("TypeFullText", GlobalSettings.Instance.TypeDelay);
+    }
 }
+
+
+
+
+
+

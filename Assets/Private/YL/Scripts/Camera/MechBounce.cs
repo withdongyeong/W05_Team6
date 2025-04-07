@@ -12,5 +12,6 @@ public class CameraTest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z)) cameraController.StartZoomInOut();
         if (Input.GetKeyDown(KeyCode.X)) cameraController.StartZoomIn();
         if (Input.GetKeyDown(KeyCode.T)) cameraController.StartTilt();
+        if (Input.GetKeyDown(KeyCode.Space)) cameraController.StartShake();
     }
 }

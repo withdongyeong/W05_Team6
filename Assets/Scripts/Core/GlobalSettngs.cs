@@ -21,14 +21,15 @@ public class GlobalSettings : MonoBehaviour
     private float _shatterEffectDuration = 3f;
 
     [Header("Enemy Settings")]
-    private float _enemyMaxHp = 50f;
+    private float _enemyMaxHp = 10f;
     private float _enemyActionInterval = 3f;
     private float _playerPrepareTime = 1f;
     private float _enemyPrepareTime = 20f;
     private float _enemyCounteredTime = 3.0f;
     private List<string> _attackBeforeShout = new List<string>{"FastAttack", "MidiumAttack", "HeavyAttack" }; // 포효전에 사용할 공격들
+    private float _typeDelay = 0.1f;
 
-    
+
     [Header("Getter")]
     public float EnemyCounteredTime => _enemyCounteredTime;
     public float PlayerPrepareTime => _playerPrepareTime;
@@ -49,6 +50,7 @@ public class GlobalSettings : MonoBehaviour
     public List<string> AttackBeforeShout => _attackBeforeShout;
 
     public float ShatterEffectDuration => _shatterEffectDuration;
+    public float TypeDelay => _typeDelay;
 
     void Awake()
     {
