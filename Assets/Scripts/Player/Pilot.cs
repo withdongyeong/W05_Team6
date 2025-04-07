@@ -13,19 +13,27 @@ public class Pilot : MonoBehaviour
     public bool CanAcceptCommand() => !_isPreparing;
     public bool IsPreparing => _isPreparing;
 
+    private Animator pilotAnim;
 
-    void Start()
+   
+    void Awake()
     {
         _player = FindAnyObjectByType<Player>();
+        pilotAnim = GetComponentInChildren<Animator>();
     }
-    
+
+    private void Start()
+    {
+        GameManager.Instance.pilotActionOver += () => pilotAnim.SetBool("IsPreparing", false);
+    }
+
     public void PrepareAction(PilotActionData actionData)
     {
         if (_isPreparing) return;
 
         _isPreparing = true;
         _isCancelled = false;
-        
+        pilotAnim.SetBool("IsPreparing", true);
         _prepareRoutine = StartCoroutine(PrepareAndExecute(actionData));
     }
 
@@ -56,6 +64,7 @@ public class Pilot : MonoBehaviour
         StopCoroutine(_prepareRoutine);
         _prepareRoutine = null;
         _isPreparing = false;
+        pilotAnim.SetBool("IsPreparing", false);
 
         Debug.Log($"Pilot {pilotId} action cancelled.");
         return true;

@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private float _prepareStartTime;
     private float _nextActionTime;
     private float _counteredTime;
+    private Animator anim;
     
     [Header("Getter")]
     public EnemyActionState CurrentState => _state;
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
         actions = DataLoader.LoadEnemyActions().enemyActions.FindAll(a => a.enemyId == enemyId);
         _tester = FindAnyObjectByType<Tester>();
         _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -61,6 +63,8 @@ public class Enemy : MonoBehaviour
 
         GameManager.Instance.Player.ChangePlayerEnergy(GlobalSettings.Instance.ChargeEnergyPerAction);
         // TODO: 준비 애니메이션 재생 위치
+        anim.SetInteger("Prepare", 1); // 이거 나중에 actionCount +1로 해야함.
+
     }
 
     void MonitorForCounter()
@@ -72,7 +76,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        if (Time.time >= _prepareStartTime + GlobalSettings.Instance.EnemyPrepareTime)
+        if (Time.time >= _prepareStartTime + _currentAction.castingTime)
         {
             _state = EnemyActionState.Executing;
             ExecuteCurrentAction();
@@ -89,6 +93,8 @@ public class Enemy : MonoBehaviour
             _tester.UpdateResultText($"[Counter] Enemy action was countered!");
 
         // TODO: 파훼 애니메이션/이펙트 등
+        anim.SetTrigger("Damaged");
+        anim.SetInteger("Prepare", 0);
     }
 
     void UpdateCounteredState()
@@ -98,7 +104,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("[Enemy] Countered state ended → Returning to Idle");
             _state = EnemyActionState.Idle;
-            _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
+            _nextActionTime = Time.time + 3f; // 카운터 당한 후에는 바로 다시 액션 실행
         }
     }
 
@@ -106,14 +112,23 @@ public class Enemy : MonoBehaviour
     {
         if (isAlive && _currentAction != null)
         {
+            var playerAction = GameManager.Instance.GetCurrentPlayerAction();
+            if (IsCounteredAfterExecute(_currentAction, playerAction))
+            {
+                EnterCounteredState();
+                return;
+            }
+            anim.SetTrigger("Attack");
             GameManager.Instance.ReceiveEnemyAction(_currentAction);
         }
 
         _currentAction = null;
         _state = EnemyActionState.Idle;
+        anim.SetInteger("Prepare", 0);
         _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
     }
 
+    //준비중에는 공격 콤보에만 카운터당함.
     bool IsCounteredAfterPrepare(EnemyActionData enemyAction, GameManager.PendingAction player)
     {
         if (enemyAction == null || enemyAction.counteredBy == null || player == null)
@@ -124,18 +139,38 @@ public class Enemy : MonoBehaviour
 
         var action = player.action;
 
+        if (player.action.type != "Attack")
+            return false;
+        else
+            return enemyAction.counteredBy.Exists(c => (c.id == action.id));
+    }
+
+    //방어에도 카운터 당함.
+    bool IsCounteredAfterExecute(EnemyActionData enemyAction, GameManager.PendingAction player)
+    {
+        if (enemyAction == null || enemyAction.counteredBy == null || player == null)
+            return false;
+
+        if (player.occurTime < _prepareStartTime)
+            return false;
+
+        var action = player.action;
+
         return enemyAction.counteredBy.Exists(c => (c.id == action.id));
+
     }
 
     public bool TakeDamage(float amount)
     {
         currentHp -= amount;
+        anim.SetTrigger("Damaged");
         if (_tester) _tester.UpdateResultText($"Enemy took {amount} damage. Current HP: {currentHp}");
 
         if (currentHp <= 0)
         {
             isAlive = false;
             if (_tester) _tester.UpdateResultText($"{enemyId} Defeated!");
+            anim.SetTrigger("Dead");
             return false;
         }
         return true;

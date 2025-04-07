@@ -119,6 +119,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1535839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 663498319374879345, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+  m_PrefabInstance: {fileID: 7202280098761088773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1535841
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9fa6ccb90368cc44bbe718763f7d446, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &32906727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,6 +2457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f84cef581225504587694329218a5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pilots: []
 --- !u!1 &1378799937
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,6 +3205,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2781397646402910262, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: actionId
+      value: Stretch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247700587392731698, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4247700587392731698, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -3269,14 +3305,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7513966247934543917, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: actionId
+      value: Bending
+      objectReference: {fileID: 0}
     - target: {fileID: 8015094967103617947, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_Name
       value: p1
       objectReference: {fileID: 0}
     - target: {fileID: 8041035739651853287, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_FlipX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8041035739651853287, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3781910019033479378, guid: fd281bc0da39aeb41ba7a1f0bd6a4688, type: 3}
     - target: {fileID: 8302555279989748107, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3284,7 +3328,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 663498319374879345, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1535841}
   m_SourcePrefab: {fileID: 100100000, guid: 1f5b730b28b9954409385a0853e7ae60, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

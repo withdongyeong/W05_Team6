@@ -1,8 +1,13 @@
 fileFormatVersion: 2
-guid: 343e21af19669a649b68142775538486
+guid: 723737e23b71a234ab12254aa231eb18
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Idle_Clip
+    second: {fileID: 7400000, guid: c91e8f66cffb5334e9ac9fbc07082e5d, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -98,7 +103,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638795678960274024
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -135,7 +140,7 @@ ScriptedImporter:
       y: 4
       width: 726
       height: 972
-    spriteID: dca7586bfac97e846a449fbd039bf3d3
+    spriteID: e4b98aefe82391f4ca79fdc3f2732381
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -156,7 +161,7 @@ ScriptedImporter:
       y: 996
       width: 726
       height: 972
-    spriteID: e0414be7ea9cbbb4ca141a9fd6f16dfb
+    spriteID: bccc16be72c947045b432cd89dc39ba0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -177,7 +182,7 @@ ScriptedImporter:
       y: 4
       width: 726
       height: 984
-    spriteID: b7e6f5b6d12ed164cae50a3d015ca795
+    spriteID: aa09819eeddaea44a9c5310eac5a5f52
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,7 +203,7 @@ ScriptedImporter:
       y: 996
       width: 726
       height: 972
-    spriteID: 88dc368b11fd5ba4eb114892299ebe8a
+    spriteID: d268f915e0659264f9e73ed297af2f26
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -224,7 +229,7 @@ ScriptedImporter:
         y: 10
         width: 726
         height: 972
-      spriteId: dca7586bfac97e846a449fbd039bf3d3
+      spriteId: e4b98aefe82391f4ca79fdc3f2732381
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -233,7 +238,7 @@ ScriptedImporter:
         y: 10
         width: 726
         height: 972
-      spriteId: e0414be7ea9cbbb4ca141a9fd6f16dfb
+      spriteId: bccc16be72c947045b432cd89dc39ba0
     - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
@@ -242,7 +247,7 @@ ScriptedImporter:
         y: 10
         width: 726
         height: 984
-      spriteId: b7e6f5b6d12ed164cae50a3d015ca795
+      spriteId: aa09819eeddaea44a9c5310eac5a5f52
     - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
@@ -251,7 +256,7 @@ ScriptedImporter:
         y: 10
         width: 726
         height: 972
-      spriteId: 88dc368b11fd5ba4eb114892299ebe8a
+      spriteId: d268f915e0659264f9e73ed297af2f26
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -259,6 +264,42 @@ ScriptedImporter:
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
