@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
         _tester = FindAnyObjectByType<Tester>();
         _playerEnergy = GetComponent<PlayerEnergy>();
     }
-    void Start()
+    private void Start()
     {
         _hpMax = GlobalSettings.Instance.PlayerHpMax;
         _currentHp = _hpMax;

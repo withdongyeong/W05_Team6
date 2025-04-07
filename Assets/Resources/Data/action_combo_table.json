@@ -29,7 +29,7 @@
       "result": "CounterAttack",
       "type" : "Defense",
       "damage" : 8,
-      "duration" : 1,
+      "duration" : 18,
       "castingTime" : 3
     },
 	
@@ -41,7 +41,7 @@
       ],
       "result": "Evasive",
       "type" : "Defense",
-      "duration" : 1,
+      "duration" : 18,
       "castingTime" : 1
     },
 	{
@@ -51,7 +51,7 @@
       ],
       "result": "Guard",
       "type" : "Defense",
-      "duration" : 5,
+      "duration" : 18,
       "castingTime" : 1
     },
 	{

@@ -4,6 +4,7 @@
       "enemyId": "enemy_1",
       "id": "FastAttack",
       "type": "Attack",
+      "castingTime" : "15",
       "counteredBy": [
         { "pilot": 0, "id": "Guard", "type": "Defense" },
         { "pilot": 0, "id": "Jab", "type": "Attack" }
@@ -13,6 +14,7 @@
       "enemyId": "enemy_1",
       "id": "MidiumAttack",
       "type": "Attack",
+      "castingTime" : "17",
       "counteredBy": [
         { "pilot": 0, "id": "Evasive", "type": "Defense" },
         { "pilot": 0, "id": "Jab", "type": "Attack" },
@@ -23,6 +25,7 @@
       "enemyId": "enemy_1",
       "id": "HeavyAttack",
       "type": "Attack",
+      "castingTime" : "18",
       "counteredBy": [
         { "pilot": 0, "id": "Evasive", "type": "Defense" },
         { "pilot": 0, "id": "Kick", "type": "Attack" },
@@ -38,6 +41,7 @@
       "enemyId": "enemy_1",
       "id": "LaserAttack",
       "type": "Attack",
+      "castingTime" : "13",
       "counteredBy": [
         { "pilot": 0, "id": "Guard", "type": "Defense" },
         { "pilot": 0, "id": "Kick", "type": "Attack" }
@@ -47,6 +51,7 @@
       "enemyId": "enemy_1",
       "id": "Stab",
       "type": "Attack",
+      "castingTime" : "13",
       "counteredBy": [
         { "pilot": 0, "id": "Uppercut", "type": "Attack" },
         { "pilot": 0, "id": "CounterAttack", "type": "Defense" }

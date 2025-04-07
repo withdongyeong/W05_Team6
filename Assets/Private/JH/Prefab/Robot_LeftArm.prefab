@@ -221,7 +221,6 @@ GameObject:
   - component: {fileID: 6267147954418282827}
   - component: {fileID: 3962481335798117752}
   - component: {fileID: 8986615360683247994}
-  - component: {fileID: 6403862010349990230}
   m_Layer: 0
   m_Name: PilotActionButton2
   m_TagString: Untagged
@@ -359,19 +358,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.98, y: 2.04}
   m_EdgeRadius: 0
---- !u!114 &6403862010349990230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5191024414571669022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ce1d7acd1341674f9bc60694d1e8bf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionId: 02
 --- !u!1 &6977471467347634829
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +370,6 @@ GameObject:
   - component: {fileID: 3202114227195563885}
   - component: {fileID: 722433890245954104}
   - component: {fileID: 325087926518454885}
-  - component: {fileID: 3100237491359513851}
   m_Layer: 0
   m_Name: PilotActionButton1
   m_TagString: Untagged
@@ -522,19 +507,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.98, y: 2.04}
   m_EdgeRadius: 0
---- !u!114 &3100237491359513851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6977471467347634829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ce1d7acd1341674f9bc60694d1e8bf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionId: 01
 --- !u!1 &7512333318653916252
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,3 +857,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f3e8347b37e7f40b357f723ab4c27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pilotId: 0
