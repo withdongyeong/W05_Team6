@@ -42,6 +42,15 @@ public class GameManager : MonoBehaviour
 
     public Action pilotActionOver;
 
+    private Action startBounce;
+    private Action startFall;
+    private Action startZoomInOut;
+    private Action startZoomIn;
+    private Action startTilt;
+
+    private List<Action> cameraActions;
+    public CameraMotionController _mainCamera { get; private set; }
+
     void Awake()
     {
         if (GameManager.Instance == null)
@@ -52,10 +61,20 @@ public class GameManager : MonoBehaviour
         _comboData = DataLoader.LoadActionCombos();
         _enemy = FindAnyObjectByType<Enemy>();
         _player = FindAnyObjectByType<Player>();
+        _mainCamera = FindAnyObjectByType<CameraMotionController>();
     }
     void Start()
     {
         StartCoroutine(ComboProcessingLoop());
+        SubscribeCameraFunc();//밑의 cameraactions에 들어갈 이벤트들 구독
+        cameraActions = new()
+        {
+            startBounce,
+            startFall,
+            startZoomInOut,
+            startZoomIn,
+            startTilt
+        };
     }
 
     public void ReceivePlayerAction(int pilotId, PilotActionData action)
@@ -130,9 +149,10 @@ public class GameManager : MonoBehaviour
                         id = combo.result,
                         type = combo.type,
                         damage = combo.type == "Attack" || combo.result == "CounterAttack" ? combo.damage : 0,
-                        duration = combo.type == "Defense" ? combo.duration : 0
+                        duration = combo.type == "Defense" ? combo.duration : 0,
+                        cameraIndex = combo.cameraIndex
                     }
-                }, 
+                },
                 combo.castingTime));
                 //ReceiveResolvedPlayerAction(new PendingAction
                 //{
@@ -229,6 +249,8 @@ public class GameManager : MonoBehaviour
 
     void ResolvePlayerAction(PendingAction action)
     {
+        //액션에 맞는 카메라 함수 호출
+        cameraActions[action.action.cameraIndex]();
         if (action.action.type == "Attack")
         {
             bool enemyBlocked = _enemyAction != null &&
@@ -283,6 +305,16 @@ public class GameManager : MonoBehaviour
                 _player.ChangePlayerEnergy(3);
 
         }
+    }
+
+    //액션이랑 카메라 함수들 매칭.
+    private void SubscribeCameraFunc()
+    {
+        startBounce += _mainCamera.StartBounce;
+        startFall += _mainCamera.StartFall;
+        startTilt += _mainCamera.StartTilt;
+        startZoomIn += _mainCamera.StartZoomIn;
+        startZoomInOut += _mainCamera.StartZoomInOut;
     }
 
 }
