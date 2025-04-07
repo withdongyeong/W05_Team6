@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using NUnit.Framework;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class GlobalSettings : MonoBehaviour
 {
@@ -8,21 +10,22 @@ public class GlobalSettings : MonoBehaviour
     [Header("Game Settings")]
     private float _comboCheckDuration = 4f;
     private float _attackCheckDuration = 1f;
-    private float _playerHpMax = 100f;
+    private float _playerHpMax = 50f;
     private float _playerEnergyMax = 10f;
     private float _playerEnergyRecoveryPerSec = 1f;
     private float _actionCancelRefundAmount = 5f;
     private float _playerDamage = 10f;
     private float _defenseBufferTime = 2f;
     private int _chargeEnergyPerAction = 4;
-    
+
     [Header("Enemy Settings")]
-    private float _enemyMaxHp = 100f;
+    private float _enemyMaxHp = 60f;
     private float _enemyAttackDamage = 10f;
     private float _enemyActionInterval = 3f;
     private float _playerPrepareTime = 1f;
     private float _enemyPrepareTime = 20f;
     private float _enemyCounteredTime = 3.0f;
+    private List<string> _attackBeforeShout = new List<string>{"FastAttack", "MidiumAttack", "HeavyAttack" }; // 포효전에 사용할 공격들
 
     
     [Header("Getter")]
@@ -42,6 +45,8 @@ public class GlobalSettings : MonoBehaviour
     public float EnemyActionInterval => _enemyActionInterval;
 
     public int ChargeEnergyPerAction => _chargeEnergyPerAction;
+
+    public List<string> AttackBeforeShout => _attackBeforeShout;
     
     void Awake()
     {

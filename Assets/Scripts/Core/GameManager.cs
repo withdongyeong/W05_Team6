@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -245,16 +246,9 @@ public class GameManager : MonoBehaviour
                 _tester.UpdateResultText($"[Player] Pilot{action.pilot}_{action.action.id} 공격 → [Enemy] 피해 {(isAlive ? "입음" : "사망")}");
             }
         }
-
-        if (action.action.type == "Defense" &&
-            _enemyAction != null &&
-            _enemyAction.type == "Attack" &&
-            action.occurTime <= _enemyOccurTime &&
-            _enemyOccurTime <= action.endTime)
-        {
-            _tester.UpdateResultText($"[Enemy] { _enemyAction.id } 공격 → [Player] 방어 성공");
-        }
     }
+
+
 
 
     void ResolveEnemyAction(EnemyActionData action)
@@ -277,4 +271,18 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void Countered()
+    {
+        if(_playerAction != null && _playerAction.action.type == "Defense")
+        {
+            Debug.Log("카운터 발생 및 부가 효과 발동");
+            if (_playerAction.action.id == "CounterAttack")
+                _enemy.TakeDamage(_playerAction.action.damage);
+            else if (_playerAction.action.id == "Evasive")
+                _player.ChangePlayerEnergy(3);
+
+        }
+    }
+
 }
