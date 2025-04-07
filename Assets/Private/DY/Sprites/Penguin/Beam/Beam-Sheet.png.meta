@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 5a3f55bda45248044bb3d0996172b324
+guid: 8946f3b7ab49c1f449d31b650acb7e7c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6934013284892070054
-    second: Attack1_0
+      213: -7596651268984246431
+    second: Beam-Sheet_0
+  - first:
+      213: -8254121230342700083
+    second: Beam-Sheet_1
+  - first:
+      213: 8342631064789478897
+    second: Beam-Sheet_2
+  - first:
+      213: -7135261000704884179
+    second: Beam-Sheet_3
+  - first:
+      213: 2072659037715272352
+    second: Beam-Sheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack1_0
+      name: Beam-Sheet_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 43
-        width: 330
-        height: 426
+        x: 3
+        y: 20
+        width: 498
+        height: 423
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a0d4d938509a3060800000000000000
-      internalID: 6934013284892070054
+      spriteID: 16f6cad6be5439690800000000000000
+      internalID: -7596651268984246431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beam-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 20
+        width: 498
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc3c9642978737d80800000000000000
+      internalID: -8254121230342700083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beam-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 0
+        width: 498
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd6ae490caf6c370800000000000000
+      internalID: 8342631064789478897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beam-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 0
+        width: 498
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2289419ce57afc90800000000000000
+      internalID: -7135261000704884179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beam-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 0
+        width: 497
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a29583d96093cc10800000000000000
+      internalID: 2072659037715272352
       vertices: []
       indices: 
       edges: []
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stab5_0: 6175529149418511059
+      Beam-Sheet_0: -7596651268984246431
+      Beam-Sheet_1: -8254121230342700083
+      Beam-Sheet_2: 8342631064789478897
+      Beam-Sheet_3: -7135261000704884179
+      Beam-Sheet_4: 2072659037715272352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

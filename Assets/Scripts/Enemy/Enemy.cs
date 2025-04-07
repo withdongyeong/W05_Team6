@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public string enemyId = "enemy_1";
 
     private List<EnemyActionData> actions;
+    private List<EnemyActionData> actionsBeforeShout; //포효하기전 공격들
+    private bool isShouted = false; //포효했는가?
     private float currentHp;
     private bool isAlive = true;
     private Tester _tester;
@@ -26,6 +28,7 @@ public class Enemy : MonoBehaviour
     {
         currentHp = GlobalSettings.Instance.EnemyMaxHp;
         actions = DataLoader.LoadEnemyActions().enemyActions.FindAll(a => a.enemyId == enemyId);
+        actionsBeforeShout = actions.FindAll(a=>GlobalSettings.Instance.AttackBeforeShout.Exists(id => id == a.id));
         _tester = FindAnyObjectByType<Tester>();
         _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
         anim = GetComponent<Animator>();
@@ -54,7 +57,16 @@ public class Enemy : MonoBehaviour
 
     void StartPreparingAction()
     {
-        _currentAction = actions[Random.Range(0, actions.Count)];
+        //행동 정하는 if문.
+        if(!isShouted)
+        {
+            if (currentHp > GlobalSettings.Instance.EnemyMaxHp / 2f)
+                _currentAction = actionsBeforeShout[Random.Range(0, actionsBeforeShout.Count)];
+            else
+                _currentAction = actions.Find(a => a.id == "Shout");//체력 반절 이하면 포효
+        }
+        else
+            _currentAction = actions[Random.Range(0, actions.Count)];//포효 빼야되는데 귀찮아요..
         _prepareStartTime = Time.time;
         _state = EnemyActionState.Preparing;
 
@@ -113,6 +125,8 @@ public class Enemy : MonoBehaviour
         {
             anim.SetTrigger("Attack");
             GameManager.Instance.ReceiveEnemyAction(_currentAction);
+            if (_currentAction.id == "Shout")
+                isShouted = true;
         }
 
         _currentAction = null;
@@ -131,6 +145,29 @@ public class Enemy : MonoBehaviour
 
         var action = player.action;
 
+<<<<<<< Updated upstream
+=======
+        if (player.action.type != "Attack")
+            return false;
+        else
+            return enemyAction.counteredBy.Exists(c => (c.id == action.id));
+    }
+
+    //방어에도 카운터 당함.
+    bool IsCounteredAfterExecute(EnemyActionData enemyAction, GameManager.PendingAction player)
+    {
+        if (enemyAction == null || enemyAction.counteredBy == null || player == null)
+            return false;
+
+        if (player.occurTime < _prepareStartTime)
+            return false;
+
+        var action = player.action;
+
+        if (enemyAction.counteredBy.Exists(c => (c.id == action.id)))
+            GameManager.Instance.Countered();
+     
+>>>>>>> Stashed changes
         return enemyAction.counteredBy.Exists(c => (c.id == action.id));
     }
 

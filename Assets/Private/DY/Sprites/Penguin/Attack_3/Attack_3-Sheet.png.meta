@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: 3904c25351b593c489f42ca15afc1838
+guid: b1facb00c65b06c4a948012399c9fafc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -375756867473332523
-    second: Prepare1-Sheet_0
+      213: 389369783566010691
+    second: Attack_3-Sheet_0
   - first:
-      213: -8355822945612080515
-    second: Prepare1-Sheet_1
+      213: -160877105053898079
+    second: Attack_3-Sheet_1
   - first:
-      213: -6303673505955256601
-    second: Prepare1-Sheet_2
+      213: -2321915408762031311
+    second: Attack_3-Sheet_2
   - first:
-      213: -1613699805008676818
-    second: Prepare1-Sheet_3
+      213: -1481182658984795345
+    second: Attack_3-Sheet_3
   - first:
-      213: 4146263138620191432
-    second: Prepare1-Sheet_4
+      213: -4461656274864522226
+    second: Attack_3-Sheet_4
+  - first:
+      213: 1773062245587741896
+    second: Attack_3-Sheet_5
+  - first:
+      213: 7798653637319726828
+    second: Attack_3-Sheet_6
+  - first:
+      213: 2928151780669689067
+    second: Attack_3-Sheet_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,7 +134,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prepare1-Sheet_0
+      name: Attack_3-Sheet_0
       rect:
         serializedVersion: 2
         x: 79
@@ -140,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d6a650be1b09caf0800000000000000
-      internalID: -375756867473332523
+      spriteID: 34909b351c1576500800000000000000
+      internalID: 389369783566010691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prepare1-Sheet_1
+      name: Attack_3-Sheet_1
       rect:
         serializedVersion: 2
         x: 526
@@ -162,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7adbb05d472a0c80800000000000000
-      internalID: -8355822945612080515
+      spriteID: 1aae4c4102374cdf0800000000000000
+      internalID: -160877105053898079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prepare1-Sheet_2
+      name: Attack_3-Sheet_2
       rect:
         serializedVersion: 2
         x: 1021
         y: 43
         width: 430
-        height: 434
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e6ee79385ad488a0800000000000000
-      internalID: -6303673505955256601
+      spriteID: 133bb3edc36e6cfd0800000000000000
+      internalID: -2321915408762031311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prepare1-Sheet_3
+      name: Attack_3-Sheet_3
       rect:
         serializedVersion: 2
         x: 1521
-        y: 43
+        y: 110
         width: 430
-        height: 434
+        height: 333
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,17 +215,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e28375cb39cfa99e0800000000000000
-      internalID: -1613699805008676818
+      spriteID: f232eb32838c17be0800000000000000
+      internalID: -1481182658984795345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prepare1-Sheet_4
+      name: Attack_3-Sheet_4
       rect:
         serializedVersion: 2
-        x: 2026
+        x: 2021
+        y: 110
+        width: 430
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0cbec2c1430512c0800000000000000
+      internalID: -4461656274864522226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2521
+        y: 110
+        width: 430
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cce9e0e7be2b9810800000000000000
+      internalID: 1773062245587741896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 110
+        width: 428
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce610c20a226a3c60800000000000000
+      internalID: 7798653637319726828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_3-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3526
         y: 43
         width: 435
         height: 426
@@ -228,8 +303,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c2b0c25b5c7a8930800000000000000
-      internalID: 4146263138620191432
+      spriteID: bec8e3fc782e2a820800000000000000
+      internalID: 2928151780669689067
       vertices: []
       indices: 
       edges: []
@@ -248,11 +323,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Prepare_3-Sheet_0: -6862541481462950152
-      Prepare_3-Sheet_1: 1732642045984568508
-      Prepare_3-Sheet_2: 6291453767835787289
-      Prepare_3-Sheet_3: 2348132438953158275
-      Prepare_3-Sheet_4: 7311640328338498109
+      Attack_3-Sheet_0: 389369783566010691
+      Attack_3-Sheet_1: -160877105053898079
+      Attack_3-Sheet_2: -2321915408762031311
+      Attack_3-Sheet_3: -1481182658984795345
+      Attack_3-Sheet_4: -4461656274864522226
+      Attack_3-Sheet_5: 1773062245587741896
+      Attack_3-Sheet_6: 7798653637319726828
+      Attack_3-Sheet_7: 2928151780669689067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

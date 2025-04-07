@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 620bfadb442588c458d8eaa41c6a985c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6582898900974893813
+    second: Howling-Sheet_0
+  - first:
+      213: -4147839390759721663
+    second: Howling-Sheet_1
+  - first:
+      213: -2438943224664969636
+    second: Howling-Sheet_2
+  - first:
+      213: -8657286955445649567
+    second: Howling-Sheet_3
+  - first:
+      213: 4701192819383249654
+    second: Howling-Sheet_4
+  - first:
+      213: 3047144667328855533
+    second: Howling-Sheet_5
+  - first:
+      213: -7898051192445413051
+    second: Howling-Sheet_6
+  - first:
+      213: 6442917759012198866
+    second: Howling-Sheet_7
+  - first:
+      213: -2344215831535764434
+    second: Howling-Sheet_8
+  - first:
+      213: -6143284658720903071
+    second: Howling-Sheet_9
+  - first:
+      213: -7811703816108332640
+    second: Howling-Sheet_10
+  - first:
+      213: 435200166786244240
+    second: Howling-Sheet_11
+  - first:
+      213: 4496142121370071362
+    second: Howling-Sheet_12
+  - first:
+      213: -9164015445650123162
+    second: Howling-Sheet_13
+  - first:
+      213: -4562800306544509972
+    second: Howling-Sheet_14
+  - first:
+      213: -6380529141380183942
+    second: Howling-Sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Howling-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 43
+        width: 330
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fafae83ca72b5b50800000000000000
+      internalID: 6582898900974893813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 43
+        width: 435
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145e460ec0aef66c0800000000000000
+      internalID: -4147839390759721663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 43
+        width: 430
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5eaf7a2f02272ed0800000000000000
+      internalID: -2438943224664969636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 43
+        width: 430
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16ff90ed1632bd780800000000000000
+      internalID: -8657286955445649567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 349
+        width: 128
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6faa4f316fdfd3140800000000000000
+      internalID: 4701192819383249654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 357
+        width: 130
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dedbc533ee1a94a20800000000000000
+      internalID: 3047144667328855533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2021
+        y: 43
+        width: 430
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549d070494c746290800000000000000
+      internalID: -7898051192445413051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2521
+        y: 43
+        width: 430
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d95af6d097d96950800000000000000
+      internalID: 6442917759012198866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 349
+        width: 128
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2cb6741f1ca77fd0800000000000000
+      internalID: -2344215831535764434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 357
+        width: 130
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16075d2c62baebaa0800000000000000
+      internalID: -6143284658720903071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 3021
+        y: 43
+        width: 430
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a9ac4674c0479390800000000000000
+      internalID: -7811703816108332640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 43
+        width: 430
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e1c73fe342a0600800000000000000
+      internalID: 435200166786244240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3523
+        y: 349
+        width: 128
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2413fe31071856e30800000000000000
+      internalID: 4496142121370071362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3859
+        y: 357
+        width: 130
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666d4d55180e2d080800000000000000
+      internalID: -9164015445650123162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 4021
+        y: 43
+        width: 430
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cebfe53cb4dada0c0800000000000000
+      internalID: -4562800306544509972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Howling-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 4526
+        y: 43
+        width: 435
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7881092d8ec377a0800000000000000
+      internalID: -6380529141380183942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Howling-Sheet_0: 6582898900974893813
+      Howling-Sheet_1: -4147839390759721663
+      Howling-Sheet_10: -7811703816108332640
+      Howling-Sheet_11: 435200166786244240
+      Howling-Sheet_12: 4496142121370071362
+      Howling-Sheet_13: -9164015445650123162
+      Howling-Sheet_14: -4562800306544509972
+      Howling-Sheet_15: -6380529141380183942
+      Howling-Sheet_2: -2438943224664969636
+      Howling-Sheet_3: -8657286955445649567
+      Howling-Sheet_4: 4701192819383249654
+      Howling-Sheet_5: 3047144667328855533
+      Howling-Sheet_6: -7898051192445413051
+      Howling-Sheet_7: 6442917759012198866
+      Howling-Sheet_8: -2344215831535764434
+      Howling-Sheet_9: -6143284658720903071
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
