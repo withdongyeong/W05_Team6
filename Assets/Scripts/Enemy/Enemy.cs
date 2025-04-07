@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public enum EnemyActionState { Idle, Preparing, Countered, Executing }
     private EnemyActionState _state = EnemyActionState.Idle;
     private EnemyActionData _currentAction;
-    private EnemyActionData _beforeAction;
+    private string _beforeAction;
     private float _prepareStartTime;
     private float _nextActionTime;
     private float _counteredTime;
@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
         _tester = FindAnyObjectByType<Tester>();
         _nextActionTime = Time.time + GlobalSettings.Instance.EnemyActionInterval;
         anim = GetComponent<Animator>();
+        _beforeAction = "a";
     }
 
     void Update()
@@ -59,21 +60,25 @@ public class Enemy : MonoBehaviour
 
     void StartPreparingAction()
     {
-        //행동 정하는 if문.
-        if (!isShouted)
+        do
         {
-            if (currentHp > GlobalSettings.Instance.EnemyMaxHp / 2f)
-                _currentAction = actionsBeforeShout[Random.Range(0, actionsBeforeShout.Count)];
-            else
-                _currentAction = actions.Find(a => a.id == "Shout");//체력 반절 이하면 포효
-        }
-        else
-            do
+            //행동 정하는 if문.
+            if (!isShouted)
             {
-                _currentAction = actions[Random.Range(0, actions.Count)];//포효 빼야되는데 귀찮아요..
-            } while (_currentAction.id == "Shout");
+                if (currentHp > GlobalSettings.Instance.EnemyMaxHp / 2f)
+                    _currentAction = actionsBeforeShout[Random.Range(0, actionsBeforeShout.Count)];
+                else
+                    _currentAction = actions.Find(a => a.id == "Shout");//체력 반절 이하면 포효
+            }
+            else
+                do
+                {
+                    _currentAction = actions[Random.Range(0, actions.Count)];
+                } while (_currentAction.id == "Shout");
+        } while (_currentAction.id == _beforeAction);
         _prepareStartTime = Time.time;
         _state = EnemyActionState.Preparing;
+        _beforeAction = _currentAction.id;
 
         if (_tester)
         {
